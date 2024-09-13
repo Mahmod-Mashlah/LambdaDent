@@ -20,15 +20,15 @@ class AuthController extends Controller
         $request->validated($request->all());
 
         if (!Auth::attempt($request->only(['email', 'password']))) {
-            return $this->error('', 'Credentials dont match (Unauthorized)', 401);
+            return $this->error('', "Credentials don't match (Unauthorized)", 401);
         }
 
         $user = User::where('email', $request->email)->first();
 
         return $this->success([
+            'token' => $user->createToken('API Token of' . $user->name)->plainTextToken,
             'user' => $user,
-            'token' => $user->createToken('API Token of' . $user->name)->plainTextToken
-        ]);
+        ], "logged in successfully");
     }
 
     public function register(StoreUserRequest $request)
@@ -37,24 +37,30 @@ class AuthController extends Controller
 
         $user = User::create([
 
-            'name' => $request->name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'type' => 'client',
+            'register_accepted' => false,
+            'phone' => $request->phone,
             'email' => $request->email,
             'password' => Hash::make($request->password),
 
         ]);
 
         return $this->success([
-            'user' => $user,
             'token' => $user->createToken('API Token of ' . $user->name)->plainTextToken,
-        ]);
+            'user' => $user,
+        ], "registered successfully, waiting for admin approval");
     }
 
     public function logout()
     {
         Auth::user()->currentAccessToken()->delete();
 
-        return $this->success([
-            'message' => 'You have successfuly logged out and your token has been deleted',
-        ]);
+        return $this->success(
+            [
+                /*'message' => 'You have successfuly logged out', */],
+            'logged out successfully'
+        );
     }
 }
