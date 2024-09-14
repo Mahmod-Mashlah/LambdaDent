@@ -537,6 +537,593 @@
 			]
 		},
 		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Clients Management",
+					"item": [
+						{
+							"name": "show accepted clients",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|43PMw1asXI9sUsCz6bkAHY6vEWa7UjdnuvQs7T3M91bef711",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/api/clients/show-accepted-clients",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"clients",
+										"show-accepted-clients"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show accepted clients",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8000/api/clients/show-accepted-clients",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"clients",
+												"show-accepted-clients"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 14 Sep 2024 07:44:02 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Accepted Clients\",\n    \"data\": {\n        \"registered_clients\": [\n            {\n                \"id\": 3,\n                \"first_name\": \"Alexa\",\n                \"last_name\": \"Goldner\",\n                \"phone\": \"+1 (878) 485-5264\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"petra.zulauf@example.org\",\n                \"email_verified_at\": \"2024-09-14T06:49:29.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"first_name\": \"Mitchel\",\n                \"last_name\": \"Vandervort\",\n                \"phone\": \"351.819.9488\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"gracie.klocko@example.com\",\n                \"email_verified_at\": \"2024-09-14T06:49:29.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 5,\n                \"first_name\": \"Jessy\",\n                \"last_name\": \"Rice\",\n                \"phone\": \"+1-440-291-5989\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"khessel@example.org\",\n                \"email_verified_at\": \"2024-09-14T06:49:30.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T07:00:11.000000Z\"\n            },\n            {\n                \"id\": 6,\n                \"first_name\": \"Santiago\",\n                \"last_name\": \"Runolfsson\",\n                \"phone\": \"920-527-7024\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"della06@example.net\",\n                \"email_verified_at\": \"2024-09-14T06:49:30.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 7,\n                \"first_name\": \"Ervin\",\n                \"last_name\": \"Waelchi\",\n                \"phone\": \"(775) 921-7541\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"bschimmel@example.com\",\n                \"email_verified_at\": \"2024-09-14T06:49:30.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T07:02:28.000000Z\"\n            },\n            {\n                \"id\": 8,\n                \"first_name\": \"Mireya\",\n                \"last_name\": \"Rosenbaum\",\n                \"phone\": \"+1-352-715-9530\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"sierra.rice@example.net\",\n                \"email_verified_at\": \"2024-09-14T06:49:30.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T07:03:50.000000Z\"\n            },\n            {\n                \"id\": 13,\n                \"first_name\": \"Timothy\",\n                \"last_name\": \"Schaefer\",\n                \"phone\": \"+18304874809\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"adaline96@example.org\",\n                \"email_verified_at\": \"2024-09-14T06:49:31.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 15,\n                \"first_name\": \"Kiarra\",\n                \"last_name\": \"Hahn\",\n                \"phone\": \"(757) 502-4857\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"sydni.reichel@example.com\",\n                \"email_verified_at\": \"2024-09-14T06:49:32.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 16,\n                \"first_name\": \"Fermin\",\n                \"last_name\": \"Herzog\",\n                \"phone\": \"857-625-1013\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"nikolaus.nathaniel@example.net\",\n                \"email_verified_at\": \"2024-09-14T06:49:32.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 17,\n                \"first_name\": \"Kendrick\",\n                \"last_name\": \"Gutmann\",\n                \"phone\": \"+1.602.239.8039\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"elyse02@example.net\",\n                \"email_verified_at\": \"2024-09-14T06:49:32.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 18,\n                \"first_name\": \"Sierra\",\n                \"last_name\": \"Rice\",\n                \"phone\": \"+1-534-596-9590\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"verda.cremin@example.com\",\n                \"email_verified_at\": \"2024-09-14T06:49:32.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 19,\n                \"first_name\": \"Garrison\",\n                \"last_name\": \"Kunde\",\n                \"phone\": \"+17857607980\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"gonzalo68@example.org\",\n                \"email_verified_at\": \"2024-09-14T06:49:32.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 22,\n                \"first_name\": \"Carlie\",\n                \"last_name\": \"Langworth\",\n                \"phone\": \"(941) 766-5344\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"nils37@example.com\",\n                \"email_verified_at\": \"2024-09-14T06:49:33.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 23,\n                \"first_name\": \"Korbin\",\n                \"last_name\": \"Hoppe\",\n                \"phone\": \"1-657-728-5318\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"christy.keeling@example.com\",\n                \"email_verified_at\": \"2024-09-14T06:49:33.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 25,\n                \"first_name\": \"Erling\",\n                \"last_name\": \"Rice\",\n                \"phone\": \"484.340.9887\",\n                \"type\": \"client\",\n                \"register_accepted\": 1,\n                \"email\": \"qwelch@example.net\",\n                \"email_verified_at\": \"2024-09-14T06:49:33.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "show clients registering requests",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|43PMw1asXI9sUsCz6bkAHY6vEWa7UjdnuvQs7T3M91bef711",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/api/clients/show-clients-requests",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"clients",
+										"show-clients-requests"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show clients registering requests",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8000/api/clients/show-clients-requests",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"clients",
+												"show-clients-requests"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 14 Sep 2024 07:43:34 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Clients Requests\",\n    \"data\": {\n        \"clients_requests\": [\n            {\n                \"id\": 11,\n                \"first_name\": \"Easter\",\n                \"last_name\": \"Klocko\",\n                \"phone\": \"+1.443.974.9791\",\n                \"type\": \"client\",\n                \"register_accepted\": 0,\n                \"email\": \"jane.grady@example.org\",\n                \"email_verified_at\": \"2024-09-14T06:49:31.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 12,\n                \"first_name\": \"Damian\",\n                \"last_name\": \"Schmeler\",\n                \"phone\": \"346-850-9127\",\n                \"type\": \"client\",\n                \"register_accepted\": 0,\n                \"email\": \"magali92@example.org\",\n                \"email_verified_at\": \"2024-09-14T06:49:31.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 14,\n                \"first_name\": \"Araceli\",\n                \"last_name\": \"Mante\",\n                \"phone\": \"220.495.9890\",\n                \"type\": \"client\",\n                \"register_accepted\": 0,\n                \"email\": \"kariane69@example.net\",\n                \"email_verified_at\": \"2024-09-14T06:49:31.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 20,\n                \"first_name\": \"Talon\",\n                \"last_name\": \"Sanford\",\n                \"phone\": \"+1-539-236-5541\",\n                \"type\": \"client\",\n                \"register_accepted\": 0,\n                \"email\": \"rharvey@example.com\",\n                \"email_verified_at\": \"2024-09-14T06:49:33.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 21,\n                \"first_name\": \"Charlotte\",\n                \"last_name\": \"Renner\",\n                \"phone\": \"570.480.7885\",\n                \"type\": \"client\",\n                \"register_accepted\": 0,\n                \"email\": \"hboyer@example.net\",\n                \"email_verified_at\": \"2024-09-14T06:49:33.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            },\n            {\n                \"id\": 24,\n                \"first_name\": \"Werner\",\n                \"last_name\": \"Lueilwitz\",\n                \"phone\": \"+12837998248\",\n                \"type\": \"client\",\n                \"register_accepted\": 0,\n                \"email\": \"georgiana.denesik@example.com\",\n                \"email_verified_at\": \"2024-09-14T06:49:33.000000Z\",\n                \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n                \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "show client details",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|43PMw1asXI9sUsCz6bkAHY6vEWa7UjdnuvQs7T3M91bef711",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/api/clients/show-client-details/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"clients",
+										"show-client-details",
+										"3"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show client details",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8000/api/clients/show-client-details/3",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"clients",
+												"show-client-details",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 14 Sep 2024 08:02:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Clients Requests\",\n    \"data\": {\n        \"client_details\": {\n            \"id\": 3,\n            \"first_name\": \"Alexa\",\n            \"last_name\": \"Goldner\",\n            \"phone\": \"+1 (878) 485-5264\",\n            \"type\": \"client\",\n            \"register_accepted\": 1,\n            \"email\": \"petra.zulauf@example.org\",\n            \"email_verified_at\": \"2024-09-14T06:49:29.000000Z\",\n            \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n            \"updated_at\": \"2024-09-14T06:49:34.000000Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "accept client registering request",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|43PMw1asXI9sUsCz6bkAHY6vEWa7UjdnuvQs7T3M91bef711",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "client_id",
+											"value": "24",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/api/clients/accept-client",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"clients",
+										"accept-client"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "accept client registering request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "client_id",
+													"value": "24",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:8000/api/clients/accept-client",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"clients",
+												"accept-client"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 14 Sep 2024 08:03:40 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Client Request Accepted Successfully\",\n    \"data\": {\n        \"client\": {\n            \"id\": 24,\n            \"first_name\": \"Werner\",\n            \"last_name\": \"Lueilwitz\",\n            \"phone\": \"+12837998248\",\n            \"type\": \"client\",\n            \"register_accepted\": 1,\n            \"email\": \"georgiana.denesik@example.com\",\n            \"email_verified_at\": \"2024-09-14T06:49:33.000000Z\",\n            \"created_at\": \"2024-09-14T06:49:34.000000Z\",\n            \"updated_at\": \"2024-09-14T08:03:40.000000Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "decline client registering request",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|43PMw1asXI9sUsCz6bkAHY6vEWa7UjdnuvQs7T3M91bef711",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "client_id",
+											"value": "11",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/api/clients/decline-client",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"clients",
+										"decline-client"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "decline client registering request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "client_id",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:8000/api/clients/decline-client",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"clients",
+												"decline-client"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 14 Sep 2024 07:32:53 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Client Request Deleted Successfully\",\n    \"data\": []\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Tasks",
 			"item": [
 				{
