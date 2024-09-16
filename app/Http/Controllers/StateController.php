@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreStateRequest;
 use Illuminate\Support\Facades\Response;
 use App\Http\Requests\UpdateStateRequest;
+use App\Models\User;
 
 class StateController extends Controller
 {
@@ -17,6 +18,18 @@ class StateController extends Controller
     {
         //
     }
+
+    public function show_client_cases($client_id)
+    {
+        $client = User::find($client_id);
+        $states = State::Where('client_id', $client_id)->with('images')->get();
+        return $this->success([
+            // 'images by files' => $images,
+            'cases' => $states,
+            // 'images by relations' => $state->images,
+        ], "Cases for client : " . $client->first_name . " " . $client->first_name);
+    }
+
     public function add(StoreStateRequest $request)
     {
 
@@ -80,7 +93,6 @@ class StateController extends Controller
             // 'images by relations' => $state->images,
         ], "Case added successfully, waiting for admin approval");
     }
-
     public function downloadFile($file_id)
     {
         $file = File::find($file_id);
@@ -90,7 +102,15 @@ class StateController extends Controller
         }
         return $this->error("", "File not found", 404);
     }
-
+    public function show_case_details($case_id)
+    {
+        $state = State::find($case_id);
+        return $this->success([
+            // 'images by files' => $images,
+            'case' => $state->load('images'),
+            // 'images by relations' => $state->images,
+        ], "Case details");
+    }
 
     public function show(State $state)
     {
