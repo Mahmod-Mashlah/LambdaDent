@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\File;
+use App\Models\User;
 use App\Models\State;
+use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreStateRequest;
 use Illuminate\Support\Facades\Response;
 use App\Http\Requests\UpdateStateRequest;
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Http\Requests\ChangeCaseStatusRequest;
 
 class StateController extends Controller
 {
@@ -134,6 +135,21 @@ class StateController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    public function change_status(ChangeCaseStatusRequest $request)
+    {
+        $case_id = $request->case_id;
+        $state = State::find($case_id);
+
+        if ($state->status == "delivered") {
+            return $this->error("you can't change 'delivered' status ", "Error", 404);
+        } else {
+            $state->status = $request->new_status;
+            $state->save();
+            return $this->success([
+                "case" => $state
+            ], "Status changed successfully");
+        }
+    }
     public function confirm_delivery(Request $request)
     {
         $case_id = $request->case_id;
