@@ -60,3 +60,14 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     // Logout
 });
+
+
+
+Route::post('/array', function (Request $request) {
+
+    $string = $request->input('items');
+    // $string = "1,2,3";
+    $array = array_map('intval', explode(",", $string));
+
+    return response()->json($array, 200);
+});
