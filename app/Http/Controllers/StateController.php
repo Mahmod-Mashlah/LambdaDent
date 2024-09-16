@@ -10,6 +10,7 @@ use App\Http\Requests\StoreStateRequest;
 use Illuminate\Support\Facades\Response;
 use App\Http\Requests\UpdateStateRequest;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class StateController extends Controller
 {
@@ -22,7 +23,7 @@ class StateController extends Controller
     public function show_client_cases($client_id)
     {
         $client = User::find($client_id);
-        $states = State::Where('client_id', $client_id)->with('images')->get();
+        $states = State::Where('client_id', $client_id)->orderBy('created_at', 'desc')->with('images')->get();
         return $this->success([
             // 'images by files' => $images,
             'cases' => $states,
@@ -133,6 +134,17 @@ class StateController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    public function delete_request(Request $request)
+    {
+        $case_id = $request->case_id;
+        $state = State::find($case_id);
+
+        if ($state->status == "pending" &&  $state->client_id == auth()->user()->id) {
+            $state->delete();
+            return $this->success([], "Case deleted successfully");
+        }
+        return $this->error(["you can't delete this case"], "unfortunately", 422);
+    }
     public function destroy(State $state)
     {
         //
