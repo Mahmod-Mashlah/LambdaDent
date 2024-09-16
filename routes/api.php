@@ -46,7 +46,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::post('/add', [StateController::class, 'add']); // admin and client do this 😎
         Route::get('/show-case-details/{case_id}', [StateController::class, 'show_case_details']);  // admin and client do this 😎
         Route::post('/request-cancellation', [StateController::class, 'delete_request']); // client do this 😎
-        Route::post('/confirm-delivery', [StateController::class, 'delete']); // client do this
+        Route::post('/confirm-delivery', [StateController::class, 'confirm_delivery']); // client do this
         Route::post('/change-status', [StateController::class, 'delete']); // admin do this
 
         Route::get('/download-case-image/{file_id}', [StateController::class, 'downloadFile']); // admin and client do this 😎

@@ -134,6 +134,20 @@ class StateController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    public function confirm_delivery(Request $request)
+    {
+        $case_id = $request->case_id;
+        $state = State::find($case_id);
+
+        if ($state->status == "ready" &&  $state->client_id == auth()->user()->id) {
+            $state->status = "delivered";
+            $state->save();
+            return $this->success([
+                "case" => $state
+            ], "Case confirmed successfully");
+        }
+        return $this->error(["you can't confirm this case"], "unfortunately", 422);
+    }
     public function delete_request(Request $request)
     {
         $case_id = $request->case_id;
