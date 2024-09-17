@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\State;
 use Illuminate\Http\Request;
 use App\Traits\HttpResponses;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreStateRequest;
 use Illuminate\Support\Facades\Response;
@@ -18,13 +19,19 @@ class StateController extends Controller
     use HttpResponses;
     public function index()
     {
-        //
+        $states = State::query()->orderBy('created_at', 'desc')->paginate(20);
+        $states_count = DB::table('states')->count();
+
+        return $this->success([
+            'cases_count' => $states_count,
+            'cases' => $states,
+        ], "All cases");
     }
 
     public function show_client_cases($client_id)
     {
         $client = User::find($client_id);
-        $states = State::Where('client_id', $client_id)->orderBy('created_at', 'desc')->with('images')->get();
+        $states = State::Where('client_id', $client_id)->orderBy('created_at', 'desc')->with('images')->paginate(20);
         return $this->success([
             // 'images by files' => $images,
             'cases' => $states,
