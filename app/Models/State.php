@@ -42,8 +42,15 @@ class State extends Model
         'updated_at',
     ];
 
+    protected $with = [
+        'client'
+    ];
     public function images()
     {
         return $this->hasMany(File::class, "case_id");
+    }
+    public function client()
+    {
+        return $this->belongsTo(User::class, "client_id");
     }
 }

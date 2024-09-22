@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('case_id')->nullable();
             $table->foreign('case_id')->references('id')->on('states')->onDelete('cascade');
             $table->string('name');
+            $table->boolean('is_case_image');
             $table->timestamps();
         });
     }

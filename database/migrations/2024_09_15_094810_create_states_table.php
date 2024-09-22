@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('shade');
             $table->date('expected_delivery_date');
             $table->text('notes');
-            $table->string('status');
+            $table->unsignedTinyInteger('status');
             $table->boolean('confirm_delivery');
 
             $table->string('teeth_crown')->nullable();

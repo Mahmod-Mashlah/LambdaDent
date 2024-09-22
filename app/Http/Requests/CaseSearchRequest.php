@@ -2,13 +2,13 @@
 
 namespace App\Http\Requests;
 
+use App\Traits\HttpResponses;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use APP\Traits\HttpResponses; // 😎😎😎😎😎😎😎😎
+use Illuminate\Http\Request;
 
-
-class ChangeCaseStatusRequest extends FormRequest
+class CaseSearchRequest extends FormRequest
 {
     use HttpResponses;
     /**
@@ -27,8 +27,15 @@ class ChangeCaseStatusRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'case_id' => ['required', 'exists:states,id'],
-            'new_status' => ['required', "integer", 'between:1,3'/*'string', 'in:accepted,in progress,ready' */], //pending and delivered status is denied
+
+            'client_name' => ["string", "min:3", "max:15"],
+            'patient_name' => ["string", "min:3", "max:70"],
+            'expected_delivery_date' => ["date"],
+            // 'status' => ["string", "in:accepted,in progress,ready,pending,delivered"],
+            'status' => ["integer", "between:0,4"],
+            'confirm_delivery' => ["boolean"],
+            'created_date' => ['date'],
+
         ];
     }
     protected function failedValidation(Validator $validator)

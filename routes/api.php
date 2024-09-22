@@ -41,7 +41,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::prefix('cases')->group(function () {
 
-        Route::get('/show-all-cases', [StateController::class, 'index']);  // admin do this
+        Route::get('/show-all-cases', [StateController::class, 'index']);  // admin do this 😎
         Route::get('/show-client-cases/{client_id}', [StateController::class, 'show_client_cases']);  // admin and client do this 😎
         Route::post('/add', [StateController::class, 'add']); // admin and client do this 😎
         Route::get('/show-case-details/{case_id}', [StateController::class, 'show_case_details']);  // admin and client do this 😎
@@ -53,14 +53,16 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
         // Search
 
+        Route::post('/search', [StateController::class, 'search']); // admin and client do this 😎
+        Route::post('/search-by-client-name', [StateController::class, 'search_by_client_name']); // admin and client do this 😎
+        Route::post('/search-by-patient-name', [StateController::class, 'search_by_patient_name']); // admin and client do this 😎
+
     });
 
 
 
     // Logout
 });
-
-
 
 Route::post('/array', function (Request $request) {
 

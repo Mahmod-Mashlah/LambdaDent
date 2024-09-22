@@ -11,6 +11,7 @@ class File extends Model
 
     protected $fillable = [
         "case_id",
+        "is_case_image",
         "name",
     ];
     public function case_details()
