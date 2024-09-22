@@ -40,6 +40,7 @@
 								{
 									"key": "email",
 									"value": "a@gmail.com",
+									"description": "a@gmail.com is admin email",
 									"type": "text"
 								},
 								{
@@ -84,6 +85,7 @@
 										{
 											"key": "email",
 											"value": "a@gmail.com",
+											"description": "a@gmail.com is admin email",
 											"type": "text"
 										},
 										{
@@ -1116,6 +1118,3729 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Client Request Deleted Successfully\",\n    \"data\": []\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Cases",
+					"item": [
+						{
+							"name": "show all cases (descending order)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|ruAuHxnEr6P7lb3kKzmuVW9AkkTVLgaHCbC9WsAg0bfc2eb4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/cases/show-all-cases?page=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"show-all-cases"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show all cases (descending order) with pagination",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/cases/show-all-cases?page=1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"show-all-cases"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 17 Sep 2024 02:57:19 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"All cases\",\n    \"data\": {\n        \"cases_count\": 31,\n        \"cases\": {\n            \"current_page\": 1,\n            \"data\": [\n                {\n                    \"id\": 31,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:57:15.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:57:15.000000Z\"\n                },\n                {\n                    \"id\": 30,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:57:11.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:57:11.000000Z\"\n                },\n                {\n                    \"id\": 29,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:48.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:48.000000Z\"\n                },\n                {\n                    \"id\": 28,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:40.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:40.000000Z\"\n                },\n                {\n                    \"id\": 27,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:39.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:39.000000Z\"\n                },\n                {\n                    \"id\": 24,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:37.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:37.000000Z\"\n                },\n                {\n                    \"id\": 25,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:37.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:37.000000Z\"\n                },\n                {\n                    \"id\": 26,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:37.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:37.000000Z\"\n                },\n                {\n                    \"id\": 22,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:36.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:36.000000Z\"\n                },\n                {\n                    \"id\": 23,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:36.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:36.000000Z\"\n                },\n                {\n                    \"id\": 20,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:35.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:35.000000Z\"\n                },\n                {\n                    \"id\": 21,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:35.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:35.000000Z\"\n                },\n                {\n                    \"id\": 18,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:34.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:34.000000Z\"\n                },\n                {\n                    \"id\": 19,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:34.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:34.000000Z\"\n                },\n                {\n                    \"id\": 16,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:33.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:33.000000Z\"\n                },\n                {\n                    \"id\": 17,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:33.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:33.000000Z\"\n                },\n                {\n                    \"id\": 14,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:32.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:32.000000Z\"\n                },\n                {\n                    \"id\": 15,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:32.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:32.000000Z\"\n                },\n                {\n                    \"id\": 13,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:31.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:31.000000Z\"\n                },\n                {\n                    \"id\": 12,\n                    \"client_id\": 1,\n                    \"patient_name\": \"m\",\n                    \"age\": \"23\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-03\",\n                    \"notes\": \"no need\",\n                    \"status\": \"pending\",\n                    \"confirm_delivery\": 0,\n                    \"teeth_crown\": \"16,18,19\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": null,\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-09-17T02:53:30.000000Z\",\n                    \"updated_at\": \"2024-09-17T02:53:30.000000Z\"\n                }\n            ],\n            \"first_page_url\": \"http://localhost:8000/api/cases/show-all-cases?page=1\",\n            \"from\": 1,\n            \"last_page\": 2,\n            \"last_page_url\": \"http://localhost:8000/api/cases/show-all-cases?page=2\",\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://localhost:8000/api/cases/show-all-cases?page=1\",\n                    \"label\": \"1\",\n                    \"active\": true\n                },\n                {\n                    \"url\": \"http://localhost:8000/api/cases/show-all-cases?page=2\",\n                    \"label\": \"2\",\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://localhost:8000/api/cases/show-all-cases?page=2\",\n                    \"label\": \"Next &raquo;\",\n                    \"active\": false\n                }\n            ],\n            \"next_page_url\": \"http://localhost:8000/api/cases/show-all-cases?page=2\",\n            \"path\": \"http://localhost:8000/api/cases/show-all-cases\",\n            \"per_page\": 20,\n            \"prev_page_url\": null,\n            \"to\": 20,\n            \"total\": 31\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "show client cases (by client id ) descending",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|fjkqgqDSgSyLXPsVePuC3UZ55FI6BFZNbty4Wi1Ibd9a8c12",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/api/cases/show-client-cases/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"show-client-cases",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show case details (by case id ) descending",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8000/api/cases/show-client-cases/1",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"show-client-cases",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 16 Sep 2024 12:26:05 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Cases for client : admin admin\",\n    \"data\": {\n        \"cases\": [\n            {\n                \"id\": 2,\n                \"client_id\": 1,\n                \"patient_name\": \"m\",\n                \"age\": \"23\",\n                \"gender\": \"male\",\n                \"need_trial\": 1,\n                \"repeat\": 0,\n                \"shade\": \"anything\",\n                \"expected_delivery_date\": \"2024-10-03\",\n                \"notes\": \"no need\",\n                \"status\": \"pending\",\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"16,18,19\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": \"12,13,14\",\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": null,\n                \"bridges_pontic\": null,\n                \"bridges_implant\": \"12,13\",\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-16T12:07:47.000000Z\",\n                \"updated_at\": \"2024-09-16T12:07:47.000000Z\",\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"case_id\": 2,\n                        \"name\": \"detective conan.jpg\",\n                        \"created_at\": \"2024-09-16T12:07:47.000000Z\",\n                        \"updated_at\": \"2024-09-16T12:07:47.000000Z\"\n                    }\n                ]\n            },\n            {\n                \"id\": 1,\n                \"client_id\": 1,\n                \"patient_name\": \"m\",\n                \"age\": \"23\",\n                \"gender\": \"male\",\n                \"need_trial\": 1,\n                \"repeat\": 0,\n                \"shade\": \"anything\",\n                \"expected_delivery_date\": \"2024-10-03\",\n                \"notes\": \"no need\",\n                \"status\": \"pending\",\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"16,18,19\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": \"12,13,14\",\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": null,\n                \"bridges_pontic\": null,\n                \"bridges_implant\": \"12,13\",\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-16T10:11:17.000000Z\",\n                \"updated_at\": \"2024-09-16T10:11:17.000000Z\",\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"case_id\": 1,\n                        \"name\": \"detective conan.jpg\",\n                        \"created_at\": \"2024-09-16T10:11:17.000000Z\",\n                        \"updated_at\": \"2024-09-16T10:11:17.000000Z\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "add case",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|V7afNBgcUYeZyQWt5n8ZPZ4roItJAg8v29Gn4FsLa89d83a4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "patient_name",
+											"value": "Mahmod Mashlah",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "male",
+											"description": "male or female only (case sensitive )",
+											"type": "text"
+										},
+										{
+											"key": "need_trial",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "repeat",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "shade",
+											"value": "anything",
+											"type": "text"
+										},
+										{
+											"key": "expected_delivery_date",
+											"value": "2024-10-04",
+											"type": "text"
+										},
+										{
+											"key": "notes",
+											"value": "no need",
+											"type": "text"
+										},
+										{
+											"key": "teeth_crown",
+											"value": "16,18,19,0",
+											"description": "last element is for material :: 0 : zicron , 1 : Metal ,2: Max , 3: Acrylic PMMA",
+											"type": "text"
+										},
+										{
+											"key": "teeth_pontic",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "teeth_implant",
+											"value": "12,13,14",
+											"type": "text"
+										},
+										{
+											"key": "teeth_veneer",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "teeth_inlay",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "teeth_denture",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "bridges_crown",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "bridges_pontic",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "bridges_implant",
+											"value": "12,13",
+											"type": "text"
+										},
+										{
+											"key": "bridges_veneer",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "bridges_inlay",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "bridges_denture",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "images[]",
+											"type": "file",
+											"src": "/C:/Users/Lenovo/Desktop/detective conan1.jpg"
+										},
+										{
+											"key": "case_image_screenshot",
+											"type": "file",
+											"src": "/C:/Users/Lenovo/Desktop/LinkedIn All Files/Island On Mountain Lake.jfif"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cases/add",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"add"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "some validation errors",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "patient_name",
+													"value": "ma",
+													"type": "text"
+												},
+												{
+													"key": "age",
+													"value": "150",
+													"type": "text"
+												},
+												{
+													"key": "gender",
+													"value": "Male",
+													"description": "male or female only (case sensitive )",
+													"type": "text"
+												},
+												{
+													"key": "need_trial",
+													"value": "false",
+													"type": "text"
+												},
+												{
+													"key": "repeat",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "shade",
+													"value": "anything",
+													"type": "text"
+												},
+												{
+													"key": "expected_delivery_date",
+													"value": "2024-100-40",
+													"type": "text"
+												},
+												{
+													"key": "notes",
+													"value": "no need",
+													"type": "text"
+												},
+												{
+													"key": "teeth_crown",
+													"value": "16,18,19",
+													"type": "text"
+												},
+												{
+													"key": "teeth_pontic",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_implant",
+													"value": "12,13,14",
+													"type": "text"
+												},
+												{
+													"key": "teeth_veneer",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_inlay",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_denture",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_crown",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_pontic",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_implant",
+													"value": "12,13",
+													"type": "text"
+												},
+												{
+													"key": "bridges_veneer",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_inlay",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_denture",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"type": "file",
+													"src": [
+														"/C:/Users/Lenovo/Desktop/2017-1.jpg",
+														"/C:/Users/Lenovo/Desktop/detective conan.jpg",
+														"/C:/Users/Lenovo/Desktop/photo_2024-09-01_17-48-10.jpg"
+													]
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/add",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"add"
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 17 Sep 2024 08:35:58 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 422,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"Error\",\n    \"data\": {\n        \"patient_name\": [\n            \"The patient name field must be at least 3 characters.\"\n        ],\n        \"age\": [\n            \"The age field must be between 0 and 125.\"\n        ],\n        \"gender\": [\n            \"The selected gender is invalid.\"\n        ],\n        \"need_trial\": [\n            \"The need trial field must be true or false.\"\n        ],\n        \"expected_delivery_date\": [\n            \"The expected delivery date field must be a valid date.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "File name Error in images[] array",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "patient_name",
+													"value": "Mahmod Mashlah",
+													"type": "text"
+												},
+												{
+													"key": "age",
+													"value": "20",
+													"type": "text"
+												},
+												{
+													"key": "gender",
+													"value": "male",
+													"description": "male or female only (case sensitive )",
+													"type": "text"
+												},
+												{
+													"key": "need_trial",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "repeat",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "shade",
+													"value": "anything",
+													"type": "text"
+												},
+												{
+													"key": "expected_delivery_date",
+													"value": "2024-10-04",
+													"type": "text"
+												},
+												{
+													"key": "notes",
+													"value": "no need",
+													"type": "text"
+												},
+												{
+													"key": "teeth_crown",
+													"value": "16,18,19",
+													"type": "text"
+												},
+												{
+													"key": "teeth_pontic",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_implant",
+													"value": "12,13,14",
+													"type": "text"
+												},
+												{
+													"key": "teeth_veneer",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_inlay",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_denture",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_crown",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_pontic",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_implant",
+													"value": "12,13",
+													"type": "text"
+												},
+												{
+													"key": "bridges_veneer",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_inlay",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_denture",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"type": "file",
+													"src": "/C:/Users/Lenovo/Desktop/detective conan1.jpg"
+												},
+												{
+													"key": "case_image_screenshot",
+													"type": "file",
+													"src": "/C:/Users/Lenovo/Desktop/LinkedIn All Files/Island On Mountain Lake.jfif"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/add",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"add"
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 20 Sep 2024 17:47:53 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 422,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"the File name is already taken\",\n    \"data\": \"Rename the file detective conan1.jpg please & try again\"\n}"
+								},
+								{
+									"name": "add case",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "patient_name",
+													"value": "Mahmod Mashlah",
+													"type": "text"
+												},
+												{
+													"key": "age",
+													"value": "20",
+													"type": "text"
+												},
+												{
+													"key": "gender",
+													"value": "male",
+													"description": "male or female only (case sensitive )",
+													"type": "text"
+												},
+												{
+													"key": "need_trial",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "repeat",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "shade",
+													"value": "anything",
+													"type": "text"
+												},
+												{
+													"key": "expected_delivery_date",
+													"value": "2024-10-04",
+													"type": "text"
+												},
+												{
+													"key": "notes",
+													"value": "no need",
+													"type": "text"
+												},
+												{
+													"key": "teeth_crown",
+													"value": "16,18,19,0",
+													"description": "last element is for material :: 0 : zicron , 1 : Metal ,2: Max , 3: Acrylic PMMA",
+													"type": "text"
+												},
+												{
+													"key": "teeth_pontic",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_implant",
+													"value": "12,13,14",
+													"type": "text"
+												},
+												{
+													"key": "teeth_veneer",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_inlay",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_denture",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_crown",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_pontic",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_implant",
+													"value": "12,13",
+													"type": "text"
+												},
+												{
+													"key": "bridges_veneer",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_inlay",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_denture",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"type": "file",
+													"src": [
+														"/C:/Users/Lenovo/Desktop/detective conan2.jpg",
+														"/C:/Users/Lenovo/Desktop/photo_2024-09-01_17.jpg"
+													]
+												},
+												{
+													"key": "case_image_screenshot",
+													"type": "file",
+													"src": "/C:/Users/Lenovo/Desktop/LinkedIn All Files/Island On Mountain Lake.jfif"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/add",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"add"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 21 Sep 2024 00:17:05 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Case added successfully, waiting for admin approval\",\n    \"data\": {\n        \"case\": {\n            \"client_id\": 1,\n            \"patient_name\": \"Mahmod Mashlah\",\n            \"age\": \"20\",\n            \"gender\": \"male\",\n            \"need_trial\": \"1\",\n            \"repeat\": \"0\",\n            \"shade\": \"anything\",\n            \"expected_delivery_date\": \"2024-10-04\",\n            \"notes\": \"no need\",\n            \"status\": 0,\n            \"confirm_delivery\": false,\n            \"teeth_crown\": \"16,18,19,0\",\n            \"teeth_pontic\": null,\n            \"teeth_implant\": \"12,13,14\",\n            \"teeth_veneer\": null,\n            \"teeth_inlay\": null,\n            \"teeth_denture\": null,\n            \"bridges_crown\": null,\n            \"bridges_pontic\": null,\n            \"bridges_implant\": \"12,13\",\n            \"bridges_veneer\": null,\n            \"bridges_inlay\": null,\n            \"bridges_denture\": null,\n            \"updated_at\": \"2024-09-21T00:17:05.000000Z\",\n            \"created_at\": \"2024-09-21T00:17:05.000000Z\",\n            \"id\": 10,\n            \"images\": [\n                {\n                    \"id\": 10,\n                    \"case_id\": 10,\n                    \"name\": \"detective conan2.jpg\",\n                    \"is_case_image\": 0,\n                    \"created_at\": \"2024-09-21T00:17:05.000000Z\",\n                    \"updated_at\": \"2024-09-21T00:17:05.000000Z\"\n                },\n                {\n                    \"id\": 11,\n                    \"case_id\": 10,\n                    \"name\": \"photo_2024-09-01_17.jpg\",\n                    \"is_case_image\": 0,\n                    \"created_at\": \"2024-09-21T00:17:05.000000Z\",\n                    \"updated_at\": \"2024-09-21T00:17:05.000000Z\"\n                },\n                {\n                    \"id\": 12,\n                    \"case_id\": 10,\n                    \"name\": \"Island On Mountain Lake.jfif\",\n                    \"is_case_image\": 1,\n                    \"created_at\": \"2024-09-21T00:17:05.000000Z\",\n                    \"updated_at\": \"2024-09-21T00:17:05.000000Z\"\n                }\n            ]\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "download case image (by image_id)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|fjkqgqDSgSyLXPsVePuC3UZ55FI6BFZNbty4Wi1Ibd9a8c12",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/api/cases/download-case-image/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"download-case-image",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "image not found error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8000/api/cases/download-case-image/1",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"download-case-image",
+												"1"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 16 Sep 2024 12:29:47 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 404,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"File not found\",\n    \"data\": \"\"\n}"
+								}
+							]
+						},
+						{
+							"name": "show case details (by case id )",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|fjkqgqDSgSyLXPsVePuC3UZ55FI6BFZNbty4Wi1Ibd9a8c12",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/api/cases/show-case-details/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"show-case-details",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show case details (by case id )",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8000/api/cases/show-case-details/1",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"show-case-details",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 16 Sep 2024 11:51:25 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Case details\",\n    \"data\": {\n        \"case\": {\n            \"id\": 1,\n            \"client_id\": 1,\n            \"patient_name\": \"m\",\n            \"age\": \"23\",\n            \"gender\": \"male\",\n            \"need_trial\": 1,\n            \"repeat\": 0,\n            \"shade\": \"anything\",\n            \"expected_delivery_date\": \"2024-10-03\",\n            \"notes\": \"no need\",\n            \"status\": \"pending\",\n            \"confirm_delivery\": 0,\n            \"teeth_crown\": \"16,18,19\",\n            \"teeth_pontic\": null,\n            \"teeth_implant\": \"12,13,14\",\n            \"teeth_veneer\": null,\n            \"teeth_inlay\": null,\n            \"teeth_denture\": null,\n            \"bridges_crown\": null,\n            \"bridges_pontic\": null,\n            \"bridges_implant\": \"12,13\",\n            \"bridges_veneer\": null,\n            \"bridges_inlay\": null,\n            \"bridges_denture\": null,\n            \"created_at\": \"2024-09-16T10:11:17.000000Z\",\n            \"updated_at\": \"2024-09-16T10:11:17.000000Z\",\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"case_id\": 1,\n                    \"name\": \"detective conan.jpg\",\n                    \"created_at\": \"2024-09-16T10:11:17.000000Z\",\n                    \"updated_at\": \"2024-09-16T10:11:17.000000Z\"\n                }\n            ]\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "change case status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|9SQMV0J1xJWNcFTuB4xEqlyQRkhpeHojidExqmG6387c04b0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "case_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "new_status",
+											"value": "3",
+											"description": "only can be : 1 : accepted, 2 : in progress, 3: ready",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cases/change-status",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"change-status"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "change case status ERROR",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "case_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "new_status",
+													"value": "4",
+													"description": "only can be : 1 : accepted, 2 : in progress, 3: ready",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/change-status",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"change-status"
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 20 Sep 2024 16:29:11 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 422,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"Error\",\n    \"data\": {\n        \"new_status\": [\n            \"The new status field must be between 1 and 3.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "change case status",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "case_id",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "new_status",
+													"value": "3",
+													"description": "only can be : 1 : accepted, 2 : in progress, 3: ready",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/change-status",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"change-status"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 20 Sep 2024 16:30:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Status changed successfully\",\n    \"data\": {\n        \"case\": {\n            \"id\": 1,\n            \"client_id\": 1,\n            \"patient_name\": \"Mahmod Mashlah\",\n            \"age\": \"20\",\n            \"gender\": \"male\",\n            \"need_trial\": 1,\n            \"repeat\": 0,\n            \"shade\": \"anything\",\n            \"expected_delivery_date\": \"2024-10-04\",\n            \"notes\": \"no need\",\n            \"status\": 3,\n            \"confirm_delivery\": 0,\n            \"teeth_crown\": \"16,18,19\",\n            \"teeth_pontic\": null,\n            \"teeth_implant\": \"12,13,14\",\n            \"teeth_veneer\": null,\n            \"teeth_inlay\": null,\n            \"teeth_denture\": null,\n            \"bridges_crown\": null,\n            \"bridges_pontic\": null,\n            \"bridges_implant\": \"12,13\",\n            \"bridges_veneer\": null,\n            \"bridges_inlay\": null,\n            \"bridges_denture\": null,\n            \"created_at\": \"2024-09-20T16:17:53.000000Z\",\n            \"updated_at\": \"2024-09-20T16:30:41.000000Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "fitering for dashboard",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "2|waWDhEwoTQPvsFQ5hYqEGIp7BvPShuL8mOOl9PnL84042ae3",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "client_name",
+											"value": "ann",
+											"type": "text"
+										},
+										{
+											"key": "patient_name",
+											"value": "hero",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "expected_delivery_date",
+											"value": "2024-09-23",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"description": "fom 0 to 4",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "confirm_delivery",
+											"value": "0",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "created_date",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cases/search",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"search"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "if client searched for null",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "client_name",
+													"value": "ann",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "patient_name",
+													"value": "her",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "expected_delivery_date",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "status",
+													"value": "",
+													"description": "only can be : accepted,in progress,ready,",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "confirm_delivery",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "created_date",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/search",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"search"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Sep 2024 16:29:08 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 404,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"No Search Results Found\",\n    \"data\": \" please select what are you looking for\"\n}"
+								},
+								{
+									"name": "search done",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "client_name",
+													"value": "ann",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "patient_name",
+													"value": "hero",
+													"type": "text"
+												},
+												{
+													"key": "expected_delivery_date",
+													"value": "2024-09-23",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "status",
+													"value": "1",
+													"description": "fom 0 to 4",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "confirm_delivery",
+													"value": "0",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "created_date",
+													"value": "2024-09-23",
+													"type": "text",
+													"disabled": true
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/search",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"search"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Sep 2024 18:55:00 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Searching done\",\n    \"data\": {\n        \"count_of_states_found\": 2,\n        \"intersectedStatesResult\": [\n            {\n                \"id\": 34,\n                \"client_id\": 5,\n                \"patient_name\": \"hero hero\",\n                \"age\": \"25\",\n                \"gender\": \"male\",\n                \"need_trial\": 0,\n                \"repeat\": 1,\n                \"shade\": \"xl11\",\n                \"expected_delivery_date\": \"2024-09-23\",\n                \"notes\": \"no need\",\n                \"status\": 2,\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"12,13,14\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": null,\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": \"12\",\n                \"bridges_pontic\": null,\n                \"bridges_implant\": null,\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"updated_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"client\": {\n                    \"id\": 5,\n                    \"first_name\": \"Alexandria\",\n                    \"last_name\": \"Mann\",\n                    \"phone\": \"+1-765-970-4824\",\n                    \"type\": \"client\",\n                    \"register_accepted\": 0,\n                    \"email\": \"grant.ambrose@example.com\",\n                    \"email_verified_at\": \"2024-09-20T17:22:47.000000Z\",\n                    \"created_at\": \"2024-09-20T17:22:54.000000Z\",\n                    \"updated_at\": \"2024-09-20T17:22:54.000000Z\"\n                }\n            },\n            {\n                \"id\": 35,\n                \"client_id\": 5,\n                \"patient_name\": \"heroca\",\n                \"age\": \"25\",\n                \"gender\": \"male\",\n                \"need_trial\": 0,\n                \"repeat\": 1,\n                \"shade\": \"xl11\",\n                \"expected_delivery_date\": \"2024-09-23\",\n                \"notes\": \"no need\",\n                \"status\": 0,\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"12,13,14\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": null,\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": \"12\",\n                \"bridges_pontic\": null,\n                \"bridges_implant\": null,\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"updated_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"client\": {\n                    \"id\": 5,\n                    \"first_name\": \"Alexandria\",\n                    \"last_name\": \"Mann\",\n                    \"phone\": \"+1-765-970-4824\",\n                    \"type\": \"client\",\n                    \"register_accepted\": 0,\n                    \"email\": \"grant.ambrose@example.com\",\n                    \"email_verified_at\": \"2024-09-20T17:22:47.000000Z\",\n                    \"created_at\": \"2024-09-20T17:22:54.000000Z\",\n                    \"updated_at\": \"2024-09-20T17:22:54.000000Z\"\n                }\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "search by client name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "2|waWDhEwoTQPvsFQ5hYqEGIp7BvPShuL8mOOl9PnL84042ae3",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "client_name",
+											"value": "",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cases/search-by-client-name",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"search-by-client-name"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "search by client name",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "client_name",
+													"value": "ann",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/search-by-client-name",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"search-by-client-name"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Sep 2024 19:06:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Searching done\",\n    \"data\": {\n        \"count_of_states_found\": 2,\n        \"result\": [\n            {\n                \"id\": 34,\n                \"client_id\": 5,\n                \"patient_name\": \"hero hero\",\n                \"age\": \"25\",\n                \"gender\": \"male\",\n                \"need_trial\": 0,\n                \"repeat\": 1,\n                \"shade\": \"xl11\",\n                \"expected_delivery_date\": \"2024-09-23\",\n                \"notes\": \"no need\",\n                \"status\": 2,\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"12,13,14\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": null,\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": \"12\",\n                \"bridges_pontic\": null,\n                \"bridges_implant\": null,\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"updated_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"client\": {\n                    \"id\": 5,\n                    \"first_name\": \"Alexandria\",\n                    \"last_name\": \"Mann\",\n                    \"phone\": \"+1-765-970-4824\",\n                    \"type\": \"client\",\n                    \"register_accepted\": 0,\n                    \"email\": \"grant.ambrose@example.com\",\n                    \"email_verified_at\": \"2024-09-20T17:22:47.000000Z\",\n                    \"created_at\": \"2024-09-20T17:22:54.000000Z\",\n                    \"updated_at\": \"2024-09-20T17:22:54.000000Z\"\n                }\n            },\n            {\n                \"id\": 35,\n                \"client_id\": 5,\n                \"patient_name\": \"heroca\",\n                \"age\": \"25\",\n                \"gender\": \"male\",\n                \"need_trial\": 0,\n                \"repeat\": 1,\n                \"shade\": \"xl11\",\n                \"expected_delivery_date\": \"2024-09-23\",\n                \"notes\": \"no need\",\n                \"status\": 0,\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"12,13,14\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": null,\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": \"12\",\n                \"bridges_pontic\": null,\n                \"bridges_implant\": null,\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"updated_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"client\": {\n                    \"id\": 5,\n                    \"first_name\": \"Alexandria\",\n                    \"last_name\": \"Mann\",\n                    \"phone\": \"+1-765-970-4824\",\n                    \"type\": \"client\",\n                    \"register_accepted\": 0,\n                    \"email\": \"grant.ambrose@example.com\",\n                    \"email_verified_at\": \"2024-09-20T17:22:47.000000Z\",\n                    \"created_at\": \"2024-09-20T17:22:54.000000Z\",\n                    \"updated_at\": \"2024-09-20T17:22:54.000000Z\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "client_name",
+													"value": "abc123",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/search-by-client-name",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"search-by-client-name"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Sep 2024 19:07:36 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 404,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"No Search Results Found\",\n    \"data\": \" please try another search input\"\n}"
+								}
+							]
+						},
+						{
+							"name": "search by patient name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "2|waWDhEwoTQPvsFQ5hYqEGIp7BvPShuL8mOOl9PnL84042ae3",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "patient_name",
+											"value": "hero",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cases/search-by-patient-name",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"search-by-patient-name"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "search by patient name",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "patient_name",
+													"value": "hero",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/search-by-patient-name",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"search-by-patient-name"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Sep 2024 19:27:42 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Searching done\",\n    \"data\": {\n        \"count_of_states_found\": 2,\n        \"result\": [\n            {\n                \"id\": 34,\n                \"client_id\": 5,\n                \"patient_name\": \"hero hero\",\n                \"age\": \"25\",\n                \"gender\": \"male\",\n                \"need_trial\": 0,\n                \"repeat\": 1,\n                \"shade\": \"xl11\",\n                \"expected_delivery_date\": \"2024-09-23\",\n                \"notes\": \"no need\",\n                \"status\": 2,\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"12,13,14\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": null,\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": \"12\",\n                \"bridges_pontic\": null,\n                \"bridges_implant\": null,\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"updated_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"client\": {\n                    \"id\": 5,\n                    \"first_name\": \"Alexandria\",\n                    \"last_name\": \"Mann\",\n                    \"phone\": \"+1-765-970-4824\",\n                    \"type\": \"client\",\n                    \"register_accepted\": 0,\n                    \"email\": \"grant.ambrose@example.com\",\n                    \"email_verified_at\": \"2024-09-20T17:22:47.000000Z\",\n                    \"created_at\": \"2024-09-20T17:22:54.000000Z\",\n                    \"updated_at\": \"2024-09-20T17:22:54.000000Z\"\n                }\n            },\n            {\n                \"id\": 35,\n                \"client_id\": 5,\n                \"patient_name\": \"heroca\",\n                \"age\": \"25\",\n                \"gender\": \"male\",\n                \"need_trial\": 0,\n                \"repeat\": 1,\n                \"shade\": \"xl11\",\n                \"expected_delivery_date\": \"2024-09-23\",\n                \"notes\": \"no need\",\n                \"status\": 0,\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"12,13,14\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": null,\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": \"12\",\n                \"bridges_pontic\": null,\n                \"bridges_implant\": null,\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"updated_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"client\": {\n                    \"id\": 5,\n                    \"first_name\": \"Alexandria\",\n                    \"last_name\": \"Mann\",\n                    \"phone\": \"+1-765-970-4824\",\n                    \"type\": \"client\",\n                    \"register_accepted\": 0,\n                    \"email\": \"grant.ambrose@example.com\",\n                    \"email_verified_at\": \"2024-09-20T17:22:47.000000Z\",\n                    \"created_at\": \"2024-09-20T17:22:54.000000Z\",\n                    \"updated_at\": \"2024-09-20T17:22:54.000000Z\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "error : No Search Results Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "patient_name",
+													"value": "Om Tahseen",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/search-by-patient-name",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"search-by-patient-name"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Sep 2024 19:28:08 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 404,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"No Search Results Found\",\n    \"data\": \" please try another search input\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Cases",
+					"item": [
+						{
+							"name": "add case (same in admin)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|ruAuHxnEr6P7lb3kKzmuVW9AkkTVLgaHCbC9WsAg0bfc2eb4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "patient_name",
+											"value": "ma",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "150",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Male",
+											"description": "male or female only (case sensitive )",
+											"type": "text"
+										},
+										{
+											"key": "need_trial",
+											"value": "false",
+											"type": "text"
+										},
+										{
+											"key": "repeat",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "shade",
+											"value": "anything",
+											"type": "text"
+										},
+										{
+											"key": "expected_delivery_date",
+											"value": "2024-100-40",
+											"type": "text"
+										},
+										{
+											"key": "notes",
+											"value": "no need",
+											"type": "text"
+										},
+										{
+											"key": "teeth_crown",
+											"value": "16,18,19",
+											"type": "text"
+										},
+										{
+											"key": "teeth_pontic",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "teeth_implant",
+											"value": "12,13,14",
+											"type": "text"
+										},
+										{
+											"key": "teeth_veneer",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "teeth_inlay",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "teeth_denture",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "bridges_crown",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "bridges_pontic",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "bridges_implant",
+											"value": "12,13",
+											"type": "text"
+										},
+										{
+											"key": "bridges_veneer",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "bridges_inlay",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "bridges_denture",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "images[]",
+											"type": "file",
+											"src": [
+												"/C:/Users/Lenovo/Desktop/2017-1.jpg",
+												"/C:/Users/Lenovo/Desktop/detective conan.jpg",
+												"/C:/Users/Lenovo/Desktop/photo_2024-09-01_17-48-10.jpg"
+											]
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cases/add",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"add"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add case",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "patient_name",
+													"value": "mahmod",
+													"type": "text"
+												},
+												{
+													"key": "age",
+													"value": "65",
+													"type": "text"
+												},
+												{
+													"key": "gender",
+													"value": "male",
+													"description": "male or female only (case sensitive )",
+													"type": "text"
+												},
+												{
+													"key": "need_trial",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "repeat",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "shade",
+													"value": "anything",
+													"type": "text"
+												},
+												{
+													"key": "expected_delivery_date",
+													"value": "2024-10-04",
+													"type": "text"
+												},
+												{
+													"key": "notes",
+													"value": "no need",
+													"type": "text"
+												},
+												{
+													"key": "teeth_crown",
+													"value": "16,18,19",
+													"type": "text"
+												},
+												{
+													"key": "teeth_pontic",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_implant",
+													"value": "12,13,14",
+													"type": "text"
+												},
+												{
+													"key": "teeth_veneer",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_inlay",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_denture",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_crown",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_pontic",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_implant",
+													"value": "12,13",
+													"type": "text"
+												},
+												{
+													"key": "bridges_veneer",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_inlay",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_denture",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"type": "file",
+													"src": [
+														"/C:/Users/Lenovo/Desktop/2017-1.jpg",
+														"/C:/Users/Lenovo/Desktop/detective conan.jpg",
+														"/C:/Users/Lenovo/Desktop/photo_2024-09-01_17-48-10.jpg"
+													]
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/add",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"add"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 17 Sep 2024 08:32:13 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Case added successfully, waiting for admin approval\",\n    \"data\": {\n        \"case\": {\n            \"client_id\": 1,\n            \"patient_name\": \"mahmod\",\n            \"age\": \"65\",\n            \"gender\": \"male\",\n            \"need_trial\": \"1\",\n            \"repeat\": \"0\",\n            \"shade\": \"anything\",\n            \"expected_delivery_date\": \"2024-10-04\",\n            \"notes\": \"no need\",\n            \"status\": \"pending\",\n            \"confirm_delivery\": false,\n            \"teeth_crown\": \"16,18,19\",\n            \"teeth_pontic\": null,\n            \"teeth_implant\": \"12,13,14\",\n            \"teeth_veneer\": null,\n            \"teeth_inlay\": null,\n            \"teeth_denture\": null,\n            \"bridges_crown\": null,\n            \"bridges_pontic\": null,\n            \"bridges_implant\": \"12,13\",\n            \"bridges_veneer\": null,\n            \"bridges_inlay\": null,\n            \"bridges_denture\": null,\n            \"updated_at\": \"2024-09-17T08:32:12.000000Z\",\n            \"created_at\": \"2024-09-17T08:32:12.000000Z\",\n            \"id\": 40,\n            \"images\": [\n                {\n                    \"id\": 40,\n                    \"case_id\": 40,\n                    \"name\": \"2017-1.jpg\",\n                    \"created_at\": \"2024-09-17T08:32:12.000000Z\",\n                    \"updated_at\": \"2024-09-17T08:32:12.000000Z\"\n                },\n                {\n                    \"id\": 41,\n                    \"case_id\": 40,\n                    \"name\": \"detective conan.jpg\",\n                    \"created_at\": \"2024-09-17T08:32:13.000000Z\",\n                    \"updated_at\": \"2024-09-17T08:32:13.000000Z\"\n                },\n                {\n                    \"id\": 42,\n                    \"case_id\": 40,\n                    \"name\": \"photo_2024-09-01_17-48-10.jpg\",\n                    \"created_at\": \"2024-09-17T08:32:13.000000Z\",\n                    \"updated_at\": \"2024-09-17T08:32:13.000000Z\"\n                }\n            ]\n        }\n    }\n}"
+								},
+								{
+									"name": "some validation errors",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "patient_name",
+													"value": "ma",
+													"type": "text"
+												},
+												{
+													"key": "age",
+													"value": "150",
+													"type": "text"
+												},
+												{
+													"key": "gender",
+													"value": "Male",
+													"description": "male or female only (case sensitive )",
+													"type": "text"
+												},
+												{
+													"key": "need_trial",
+													"value": "false",
+													"type": "text"
+												},
+												{
+													"key": "repeat",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "shade",
+													"value": "anything",
+													"type": "text"
+												},
+												{
+													"key": "expected_delivery_date",
+													"value": "2024-100-40",
+													"type": "text"
+												},
+												{
+													"key": "notes",
+													"value": "no need",
+													"type": "text"
+												},
+												{
+													"key": "teeth_crown",
+													"value": "16,18,19",
+													"type": "text"
+												},
+												{
+													"key": "teeth_pontic",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_implant",
+													"value": "12,13,14",
+													"type": "text"
+												},
+												{
+													"key": "teeth_veneer",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_inlay",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "teeth_denture",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_crown",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_pontic",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_implant",
+													"value": "12,13",
+													"type": "text"
+												},
+												{
+													"key": "bridges_veneer",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_inlay",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "bridges_denture",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "images[]",
+													"type": "file",
+													"src": [
+														"/C:/Users/Lenovo/Desktop/2017-1.jpg",
+														"/C:/Users/Lenovo/Desktop/detective conan.jpg",
+														"/C:/Users/Lenovo/Desktop/photo_2024-09-01_17-48-10.jpg"
+													]
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/add",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"add"
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 17 Sep 2024 08:35:58 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 422,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"Error\",\n    \"data\": {\n        \"patient_name\": [\n            \"The patient name field must be at least 3 characters.\"\n        ],\n        \"age\": [\n            \"The age field must be between 0 and 125.\"\n        ],\n        \"gender\": [\n            \"The selected gender is invalid.\"\n        ],\n        \"need_trial\": [\n            \"The need trial field must be true or false.\"\n        ],\n        \"expected_delivery_date\": [\n            \"The expected delivery date field must be a valid date.\"\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "case request cancellation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "3|MfWFrKTKczMDDUVMtrbc4bppnbrYHC24cpVF5nH6b785d621",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "case_id",
+											"value": "1",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cases/request-cancellation",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"request-cancellation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "case request cancellation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "case_id",
+													"value": "1",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/request-cancellation",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"request-cancellation"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 16 Sep 2024 15:00:10 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Case deleted successfully\",\n    \"data\": []\n}"
+								},
+								{
+									"name": "if status is not \"pending\" or unauthenticated",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "case_id",
+													"value": "1",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/request-cancellation",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"request-cancellation"
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 16 Sep 2024 14:58:11 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 422,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"unfortunately\",\n    \"data\": [\n        \"you can't delete this case\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "confirm delivery",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "3|MfWFrKTKczMDDUVMtrbc4bppnbrYHC24cpVF5nH6b785d621",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "case_id",
+											"value": "2",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cases/confirm-delivery",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"confirm-delivery"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "confirm delivery done",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "case_id",
+													"value": "2",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/confirm-delivery",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"confirm-delivery"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 16 Sep 2024 15:22:39 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Case confirmed successfully\",\n    \"data\": {\n        \"case\": {\n            \"id\": 2,\n            \"client_id\": 1,\n            \"patient_name\": \"m\",\n            \"age\": \"23\",\n            \"gender\": \"male\",\n            \"need_trial\": 1,\n            \"repeat\": 0,\n            \"shade\": \"anything\",\n            \"expected_delivery_date\": \"2024-10-03\",\n            \"notes\": \"no need\",\n            \"status\": \"delivered\",\n            \"confirm_delivery\": 0,\n            \"teeth_crown\": \"16,18,19\",\n            \"teeth_pontic\": null,\n            \"teeth_implant\": \"12,13,14\",\n            \"teeth_veneer\": null,\n            \"teeth_inlay\": null,\n            \"teeth_denture\": null,\n            \"bridges_crown\": null,\n            \"bridges_pontic\": null,\n            \"bridges_implant\": \"12,13\",\n            \"bridges_veneer\": null,\n            \"bridges_inlay\": null,\n            \"bridges_denture\": null,\n            \"created_at\": \"2024-09-16T12:07:47.000000Z\",\n            \"updated_at\": \"2024-09-16T15:22:39.000000Z\"\n        }\n    }\n}"
+								},
+								{
+									"name": "confirm delivery error (unauthenticated or case status is not ready)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "case_id",
+													"value": "2",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/confirm-delivery",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"confirm-delivery"
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 16 Sep 2024 15:20:10 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 422,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"unfortunately\",\n    \"data\": [\n        \"you can't confirm this case\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "show client cases (by client id ) descending (same in admin)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|fjkqgqDSgSyLXPsVePuC3UZ55FI6BFZNbty4Wi1Ibd9a8c12",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/api/cases/show-client-cases/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"show-client-cases",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show case details (by case id ) descending",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8000/api/cases/show-client-cases/1",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"show-client-cases",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 16 Sep 2024 12:26:05 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Cases for client : admin admin\",\n    \"data\": {\n        \"cases\": [\n            {\n                \"id\": 2,\n                \"client_id\": 1,\n                \"patient_name\": \"m\",\n                \"age\": \"23\",\n                \"gender\": \"male\",\n                \"need_trial\": 1,\n                \"repeat\": 0,\n                \"shade\": \"anything\",\n                \"expected_delivery_date\": \"2024-10-03\",\n                \"notes\": \"no need\",\n                \"status\": \"pending\",\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"16,18,19\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": \"12,13,14\",\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": null,\n                \"bridges_pontic\": null,\n                \"bridges_implant\": \"12,13\",\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-16T12:07:47.000000Z\",\n                \"updated_at\": \"2024-09-16T12:07:47.000000Z\",\n                \"images\": [\n                    {\n                        \"id\": 2,\n                        \"case_id\": 2,\n                        \"name\": \"detective conan.jpg\",\n                        \"created_at\": \"2024-09-16T12:07:47.000000Z\",\n                        \"updated_at\": \"2024-09-16T12:07:47.000000Z\"\n                    }\n                ]\n            },\n            {\n                \"id\": 1,\n                \"client_id\": 1,\n                \"patient_name\": \"m\",\n                \"age\": \"23\",\n                \"gender\": \"male\",\n                \"need_trial\": 1,\n                \"repeat\": 0,\n                \"shade\": \"anything\",\n                \"expected_delivery_date\": \"2024-10-03\",\n                \"notes\": \"no need\",\n                \"status\": \"pending\",\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"16,18,19\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": \"12,13,14\",\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": null,\n                \"bridges_pontic\": null,\n                \"bridges_implant\": \"12,13\",\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-16T10:11:17.000000Z\",\n                \"updated_at\": \"2024-09-16T10:11:17.000000Z\",\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"case_id\": 1,\n                        \"name\": \"detective conan.jpg\",\n                        \"created_at\": \"2024-09-16T10:11:17.000000Z\",\n                        \"updated_at\": \"2024-09-16T10:11:17.000000Z\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "show case details (by case id ) (same in admin)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|fjkqgqDSgSyLXPsVePuC3UZ55FI6BFZNbty4Wi1Ibd9a8c12",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/api/cases/download-case-image/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"download-case-image",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "show case details (by case id )",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8000/api/cases/show-case-details/1",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"show-case-details",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 16 Sep 2024 11:51:25 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Case details\",\n    \"data\": {\n        \"case\": {\n            \"id\": 1,\n            \"client_id\": 1,\n            \"patient_name\": \"m\",\n            \"age\": \"23\",\n            \"gender\": \"male\",\n            \"need_trial\": 1,\n            \"repeat\": 0,\n            \"shade\": \"anything\",\n            \"expected_delivery_date\": \"2024-10-03\",\n            \"notes\": \"no need\",\n            \"status\": \"pending\",\n            \"confirm_delivery\": 0,\n            \"teeth_crown\": \"16,18,19\",\n            \"teeth_pontic\": null,\n            \"teeth_implant\": \"12,13,14\",\n            \"teeth_veneer\": null,\n            \"teeth_inlay\": null,\n            \"teeth_denture\": null,\n            \"bridges_crown\": null,\n            \"bridges_pontic\": null,\n            \"bridges_implant\": \"12,13\",\n            \"bridges_veneer\": null,\n            \"bridges_inlay\": null,\n            \"bridges_denture\": null,\n            \"created_at\": \"2024-09-16T10:11:17.000000Z\",\n            \"updated_at\": \"2024-09-16T10:11:17.000000Z\",\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"case_id\": 1,\n                    \"name\": \"detective conan.jpg\",\n                    \"created_at\": \"2024-09-16T10:11:17.000000Z\",\n                    \"updated_at\": \"2024-09-16T10:11:17.000000Z\"\n                }\n            ]\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "download case image (by image_id) (same api in admin)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "1|fjkqgqDSgSyLXPsVePuC3UZ55FI6BFZNbty4Wi1Ibd9a8c12",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/vnd.api+json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8000/api/cases/download-case-image/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"download-case-image",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search by patient name (same in admin)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "2|waWDhEwoTQPvsFQ5hYqEGIp7BvPShuL8mOOl9PnL84042ae3",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "patient_name",
+											"value": "hero",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/cases/search-by-patient-name",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"cases",
+										"search-by-patient-name"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "search by patient name",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "patient_name",
+													"value": "hero",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/search-by-patient-name",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"search-by-patient-name"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Sep 2024 19:27:42 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Searching done\",\n    \"data\": {\n        \"count_of_states_found\": 2,\n        \"result\": [\n            {\n                \"id\": 34,\n                \"client_id\": 5,\n                \"patient_name\": \"hero hero\",\n                \"age\": \"25\",\n                \"gender\": \"male\",\n                \"need_trial\": 0,\n                \"repeat\": 1,\n                \"shade\": \"xl11\",\n                \"expected_delivery_date\": \"2024-09-23\",\n                \"notes\": \"no need\",\n                \"status\": 2,\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"12,13,14\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": null,\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": \"12\",\n                \"bridges_pontic\": null,\n                \"bridges_implant\": null,\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"updated_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"client\": {\n                    \"id\": 5,\n                    \"first_name\": \"Alexandria\",\n                    \"last_name\": \"Mann\",\n                    \"phone\": \"+1-765-970-4824\",\n                    \"type\": \"client\",\n                    \"register_accepted\": 0,\n                    \"email\": \"grant.ambrose@example.com\",\n                    \"email_verified_at\": \"2024-09-20T17:22:47.000000Z\",\n                    \"created_at\": \"2024-09-20T17:22:54.000000Z\",\n                    \"updated_at\": \"2024-09-20T17:22:54.000000Z\"\n                }\n            },\n            {\n                \"id\": 35,\n                \"client_id\": 5,\n                \"patient_name\": \"heroca\",\n                \"age\": \"25\",\n                \"gender\": \"male\",\n                \"need_trial\": 0,\n                \"repeat\": 1,\n                \"shade\": \"xl11\",\n                \"expected_delivery_date\": \"2024-09-23\",\n                \"notes\": \"no need\",\n                \"status\": 0,\n                \"confirm_delivery\": 0,\n                \"teeth_crown\": \"12,13,14\",\n                \"teeth_pontic\": null,\n                \"teeth_implant\": null,\n                \"teeth_veneer\": null,\n                \"teeth_inlay\": null,\n                \"teeth_denture\": null,\n                \"bridges_crown\": \"12\",\n                \"bridges_pontic\": null,\n                \"bridges_implant\": null,\n                \"bridges_veneer\": null,\n                \"bridges_inlay\": null,\n                \"bridges_denture\": null,\n                \"created_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"updated_at\": \"2024-09-23T19:00:34.000000Z\",\n                \"client\": {\n                    \"id\": 5,\n                    \"first_name\": \"Alexandria\",\n                    \"last_name\": \"Mann\",\n                    \"phone\": \"+1-765-970-4824\",\n                    \"type\": \"client\",\n                    \"register_accepted\": 0,\n                    \"email\": \"grant.ambrose@example.com\",\n                    \"email_verified_at\": \"2024-09-20T17:22:47.000000Z\",\n                    \"created_at\": \"2024-09-20T17:22:54.000000Z\",\n                    \"updated_at\": \"2024-09-20T17:22:54.000000Z\"\n                }\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "error : No Search Results Found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "patient_name",
+													"value": "Om Tahseen",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/cases/search-by-patient-name",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"cases",
+												"search-by-patient-name"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "127.0.0.1:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.3"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 22 Sep 2024 19:28:08 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status-code\": 404,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"No Search Results Found\",\n    \"data\": \" please try another search input\"\n}"
 								}
 							]
 						}
