@@ -43,7 +43,9 @@ class State extends Model
     ];
 
     protected $with = [
-        'client'
+        'client',
+        // 'comments',
+        'images',
     ];
     public function images()
     {
@@ -52,5 +54,9 @@ class State extends Model
     public function client()
     {
         return $this->belongsTo(User::class, "client_id");
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, "case_id");
     }
 }

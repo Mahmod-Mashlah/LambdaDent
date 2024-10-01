@@ -3,8 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController /*as ApiAuthController */;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\UserController;
+use App\Models\Comment;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -57,9 +59,14 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::post('/search-by-client-name', [StateController::class, 'search_by_client_name']); // admin and client do this 😎
         Route::post('/search-by-patient-name', [StateController::class, 'search_by_patient_name']); // admin and client do this 😎
 
+        // Comments
+        Route::prefix('comments')->group(function () {
+
+            Route::get('/show-case-comments/{case_id}', [CommentController::class, 'index']); // admin and client do this 😎
+            Route::post('/add-comment', [CommentController::class, 'store']); // admin and client do this 😎
+            Route::get('/delete-comment/{comment_id}', [CommentController::class, 'destroy']); // admin and client do this 😎
+        });
     });
-
-
 
     // Logout
 });
