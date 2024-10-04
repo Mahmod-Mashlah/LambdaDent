@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController /*as ApiAuthController */;
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\UserController;
@@ -31,6 +32,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     //Route::resource('/years', ApiYearController::class)/*->only(['index', 'show'])*/;
     //Route::get('/seasons/seasons_by_year_id/{year_id}', [ApiSeasonController::class, 'index']);
 
+    // Clients Management
     Route::prefix('clients')->group(function () {
 
         Route::get('/show-accepted-clients', [UserController::class, 'show_accepted_clients']);
@@ -68,7 +70,22 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         });
     });
 
+    // Bills , Bill_Cases , Accounts
+
+    Route::prefix('bills')->group(function () {
+
+        // Route::post('/increase-account', [AccountController::class, 'increase_account']); // admin do this 😎
+        // Route::get('/show-account-history', [CommentController::class, 'show-account-history']); // admin and client do this 😎
+
+        // Route::get('/show-client-bills', [BillController::class, 'show_client_bills']); // admin and client do this 😎
+        // Route::get('/search-by-date', [BillController::class, 'search_by_date']); // client do this 😎
+        // Route::get('/show-bill-details/{bill_id}', [BillController::class, 'show_bill_details']); // admin and client do this 😎
+        Route::post('/add', [BillController::class, 'add_bill']); // admin and client do this 😎
+
+    });
+
     // Logout
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
 
 Route::post('/array', function (Request $request) {

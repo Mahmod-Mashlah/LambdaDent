@@ -23,6 +23,7 @@ class State extends Model
         'notes',
         'status',
         'confirm_delivery',
+        'cost',
 
         'teeth_crown',
         'teeth_pontic',
@@ -58,5 +59,9 @@ class State extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class, "case_id");
+    }
+    public function bill()
+    {
+        return $this->belongsTo(BillCase::class);
     }
 }

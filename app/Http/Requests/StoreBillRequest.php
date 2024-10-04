@@ -2,15 +2,17 @@
 
 namespace App\Http\Requests;
 
+use App\Traits\HttpResponses;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use APP\Traits\HttpResponses; // 😎😎😎😎😎😎😎😎
+use App\Rules\DateAfterOneDayAtLeast;
 
 
-class ChangeCaseStatusRequest extends FormRequest
+class StoreBillRequest extends FormRequest
 {
     use HttpResponses;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -27,9 +29,9 @@ class ChangeCaseStatusRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'case_id' => ['required', 'exists:states,id'],
-            'new_status' => ['required', "integer", 'between:1,3'/*'string', 'in:accepted,in progress,ready' */], //pending and delivered status is denied
-            'cost' => ['required', "integer"]
+            'client_id' => ['required', 'exists:users,id'],
+            'date_from' => ['required', "date"],
+            'date_to' => ['required', "date","after:date_from", new DateAfterOneDayAtLeast($this->date_from)]
         ];
     }
     protected function failedValidation(Validator $validator)

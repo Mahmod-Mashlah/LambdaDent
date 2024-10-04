@@ -147,6 +147,7 @@ class StateController extends Controller
             'notes' => $request->notes,
             'status' => 0, //"pending"
             'confirm_delivery' => false,
+            'cost' => 0,
 
             'teeth_crown' => $request->teeth_crown,
             'teeth_pontic' => $request->teeth_pontic,
@@ -242,7 +243,11 @@ class StateController extends Controller
             return $this->error("you can't change 'delivered' status ", "Error", 404);
         } else {
             $state->status = (int) $request->new_status;
+            if ($request->new_status == 3 /*ready*/) {
+                $state->cost = (int) $request->cost; //😁😁😁😁😁😁😁😁
+            }
             $state->save();
+
             return $this->success([
                 "case" => $state
             ], "Status changed successfully");
@@ -255,6 +260,7 @@ class StateController extends Controller
 
         if ($state->status == 3 /*"ready"*/ &&  $state->client_id == auth()->user()->id) {
             $state->status = 4; //"delivered"
+
             $state->save();
             return $this->success([
                 "case" => $state

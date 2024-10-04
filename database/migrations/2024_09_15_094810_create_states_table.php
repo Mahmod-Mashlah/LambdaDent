@@ -24,9 +24,10 @@ return new class extends Migration
             $table->boolean('repeat');
             $table->string('shade');
             $table->date('expected_delivery_date');
-            $table->text('notes');
+            $table->text('notes')->nullable();
             $table->unsignedTinyInteger('status');
             $table->boolean('confirm_delivery');
+            $table->unsignedBigInteger('cost')->default(0)->nullable();
 
             $table->string('teeth_crown')->nullable();
             $table->string('teeth_pontic')->nullable();
