@@ -88,7 +88,8 @@ class BillController extends Controller
     public function show_client_bills($client_id)
     {
         $client = User::find($client_id);
-        $bills = Bill::where("client_id", $client_id)->get();
+        $bills = Bill::where("client_id", $client_id)
+            ->orderBy('date_from', 'desc')->get();
         return $this->success([
             "client_bills" => $bills,
         ], "Bills for client : " . $client->first_name . " " . $client->last_name);
