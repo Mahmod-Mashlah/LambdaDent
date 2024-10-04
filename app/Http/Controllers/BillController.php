@@ -10,6 +10,8 @@ use App\Traits\HttpResponses;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreBillRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class BillController extends Controller
 {
@@ -90,5 +92,36 @@ class BillController extends Controller
         return $this->success([
             "client_bills" => $bills,
         ], "Bills for client : " . $client->first_name . " " . $client->last_name);
+    }
+
+    public function client_search_by_date($date)
+    {
+
+        $client_id = Auth::user()->id;
+
+        $client_bills = Bill::where('client_id', $client_id)->get();
+
+        $first_bill_date_from = Bill::where("client_id", $client_id)
+            ->orderBy('date_from', 'asc')
+            ->first()->date_from;
+
+        $last_bill_date_to = Bill::where("client_id", $client_id)
+            ->orderBy('date_to', 'desc')
+            ->first()->date_to;
+
+        foreach ($client_bills as $bill) {
+            $date = Carbon::parse($date);
+            $date_from = Carbon::parse($bill->date_from);
+            $date_to = Carbon::parse($bill->date_to);
+
+            if ($date->between($date_from, $date_to)) // instead ,you can use : $bill->date_from <= $date && $bill->date_to >= $date
+                return $this->success([
+                    "result" => $bill,
+                ], "Result found");
+        }
+
+        // if ($bill_result->isEmpty() === true) {  // this 'if' is wrong ,I am just trying
+        return $this->error("no bill found, plaease enter a date between " . $first_bill_date_from . " and " . $last_bill_date_to, "Error", 404);
+        // }
     }
 }
