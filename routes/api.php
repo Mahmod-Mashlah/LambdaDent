@@ -77,9 +77,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         // Route::post('/increase-account', [AccountController::class, 'increase_account']); // admin do this 😎
         // Route::get('/show-account-history', [CommentController::class, 'show-account-history']); // admin and client do this 😎
 
-        // Route::get('/show-client-bills', [BillController::class, 'show_client_bills']); // admin and client do this 😎
         // Route::get('/search-by-date', [BillController::class, 'search_by_date']); // client do this 😎
-        // Route::get('/show-bill-details/{bill_id}', [BillController::class, 'show_bill_details']); // admin and client do this 😎
+        Route::get('/show-client-bills/{client_id}', [BillController::class, 'show_client_bills']); // admin and client do this 😎
+        Route::get('/show-bill-details/{bill_id}', [BillController::class, 'show_bill_details']); // admin and client do this 😎
         Route::post('/add', [BillController::class, 'add_bill']); // admin and client do this 😎
 
     });

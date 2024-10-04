@@ -9,6 +9,7 @@ use Illuminate\Support\Arr;
 use App\Traits\HttpResponses;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreBillRequest;
+use App\Models\User;
 
 class BillController extends Controller
 {
@@ -70,5 +71,24 @@ class BillController extends Controller
         ], "Bill added successfully");
         // }); // end of transaction
 
+    }
+
+    public function show_bill_details($bill_id)
+    {
+        $bill = Bill::find($bill_id);
+        $bill_cases_ids = BillCase::where("bill_id", $bill_id)->pluck("case_id");
+        $cases = State::findMany($bill_cases_ids);
+        return $this->success([
+            "bill" => $bill,
+            "bill_cases" => $cases,
+        ], "Bill " . $bill->code_number . " details");
+    }
+    public function show_client_bills($client_id)
+    {
+        $client = User::find($client_id);
+        $bills = Bill::where("client_id", $client_id)->get();
+        return $this->success([
+            "client_bills" => $bills,
+        ], "Bills for client : " . $client->first_name . " " . $client->last_name);
     }
 }

@@ -24,7 +24,7 @@ class Bill extends Model
     protected $with = [
         'client',
         // 'comments',
-        'bill_cases',
+        // 'bill_cases',
     ];
     public function bill_cases()
     {
