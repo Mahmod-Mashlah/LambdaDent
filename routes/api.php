@@ -1,13 +1,14 @@
 <?php
 
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController /*as ApiAuthController */;
 use App\Http\Controllers\BillController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\StateController;
 use App\Http\Controllers\UserController;
-use App\Models\Comment;
+use App\Http\Controllers\StateController;
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\AuthController /*as ApiAuthController */;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -70,7 +71,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         });
     });
 
-    // Bills , Bill_Cases , Accounts
+    // Bills , Bill_Cases
 
     Route::prefix('bills')->group(function () {
 
@@ -81,6 +82,16 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::get('/show-bill-details/{bill_id}', [BillController::class, 'show_bill_details']); // admin and client do this 😎
         Route::post('/add', [BillController::class, 'add_bill']); // admin and client do this 😎
         Route::get('/client-search-by-date/{date}', [BillController::class, 'client_search_by_date']); // client do this 😎
+
+    });
+
+    // Accounts
+
+    Route::prefix('accounts')->group(function () {
+
+        Route::get('/show-account-history-by-client-id/{client_id}', [AccountController::class, 'show_account_history']); // admin and client do this 😎
+
+        Route::post('/increase-account', [AccountController::class, 'increase_account']); // admin do this 😎
 
     });
 

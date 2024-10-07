@@ -9,6 +9,7 @@ use Illuminate\Support\Arr;
 use App\Traits\HttpResponses;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreBillRequest;
+use App\Models\Account;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
@@ -65,8 +66,21 @@ class BillController extends Controller
             'code_number' => "0" . $request->client_id . "-0" . $bill->id,
             'total_cost' => $total_cost, // 😁😁😁😁😁😁😁😁😁😁😁😀😀
         ]);
-        // $bill_cases = BillCase::where();
-        // $bill_cases = BillCase::findMany();
+
+        $previous_client_account_value =
+            Account::where('client_id', $bill->client_id)
+            ->orderBy('created_at', 'desc')->first()->current_account;
+
+        $account = Account::create([
+
+            'client_id' => $bill->client_id,
+            'bill_id' => $bill->id,
+
+            'type' => "سحب من الرصيد (فاتورة)",
+            'signed_value' => -$bill->total_cost,
+            'current_account' => $previous_client_account_value - $bill->total_cost
+
+        ]);
         return $this->success([
             "bill" => $bill/*->load("bill_cases", "client")*/,
             "bill_cases" => $states_between_dates,

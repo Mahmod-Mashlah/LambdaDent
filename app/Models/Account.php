@@ -5,34 +5,30 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bill extends Model
+class Account extends Model
 {
     use HasFactory;
+
     protected $fillable = [
 
         'client_id',
+        'bill_id',
 
-        'code_number',
-        'total_cost',
-        'date_from',
-        'date_to',
+        'type',
+        'signed_value',
+        'current_account',
 
         'created_at',
         'updated_at',
+    ];
 
-    ];
     protected $with = [
-        'client',
-        // 'comments',
-        // 'bill_cases',
+        // 'client',
+        "bill",
     ];
-    public function bill_cases()
+    public function bill()
     {
-        return $this->hasMany(BillCase::class, "id");
-    }
-    public function account()
-    {
-        return $this->hasOne(Account::class);
+        return $this->belongsTo(Bill::class);
     }
     public function client()
     {

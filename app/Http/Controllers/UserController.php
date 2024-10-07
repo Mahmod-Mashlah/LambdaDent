@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Traits\HttpResponses;
+use App\Models\Account;
 use Illuminate\Http\Request;
+use App\Traits\HttpResponses;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -54,11 +55,27 @@ class UserController extends Controller
     {
         $client_id =  $request->client_id;
         $client = User::find($client_id);
+
+        if ($client->register_accepted == 1) {
+            return $this->error("client " . $client->first_name . " " . $client->last_name . " is already accepted", "Error", 422);
+        }
         if (Auth::User()->type == "admin") {
 
             $client->register_accepted = 1; // 1 == true
             $client->save();
             // dd($client);
+
+            $account = Account::create([
+
+                'client_id' => $request->client_id,
+                'bill_id' => null,
+
+                'type' => "إنشاء حساب جديد",
+                'signed_value' => 0,
+                'current_account' => 0
+
+            ]);
+
 
             return $this->success([
                 "client" => $client,
