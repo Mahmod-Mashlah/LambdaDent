@@ -33,6 +33,7 @@ class StoreStateRequest extends FormRequest
             'need_trial' => ['required', 'boolean'],
             'repeat' => ['required', 'boolean'],
             'expected_delivery_date' => ['required', 'date'],
+            'case_screenshot' => ['required', "file"],
 
         ];
     }

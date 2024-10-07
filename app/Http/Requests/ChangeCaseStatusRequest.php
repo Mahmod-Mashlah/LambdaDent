@@ -29,7 +29,7 @@ class ChangeCaseStatusRequest extends FormRequest
         return [
             'case_id' => ['required', 'exists:states,id'],
             'new_status' => ['required', "integer", 'between:1,3'/*'string', 'in:accepted,in progress,ready' */], //pending and delivered status is denied
-            'cost' => ['required', "integer"]
+            'cost' => ['required_if:new_status,3', "integer"]
         ];
     }
     protected function failedValidation(Validator $validator)

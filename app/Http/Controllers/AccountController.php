@@ -46,6 +46,7 @@ class AccountController extends Controller
             'bill_id' => null,
 
             'type' => "إضافة رصيد",
+            'note' => $request->note,
             'signed_value' => $request->value,
             'current_account' => $previous_client_account_value + $request->value
 

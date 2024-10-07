@@ -30,7 +30,7 @@ class StoreUserRequest extends FormRequest
         return [
             'first_name' => ['required', 'string', 'min:3', 'max:30'],
             'last_name' => ['required', 'string', 'min:3', 'max:30'],
-            'phone' => ['required', 'string', 'size:10', 'regex:/^[0-9]+$/', 'starts_with:09'],
+            'phone' => ['required', 'string', 'size:10', 'regex:/^[0-9]+$/', 'starts_with:09', 'unique:users,phone'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => [
                 'required',

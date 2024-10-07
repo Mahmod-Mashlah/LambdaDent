@@ -31,7 +31,9 @@ class StoreBillRequest extends FormRequest
         return [
             'client_id' => ['required', 'exists:users,id'],
             'date_from' => ['required', "date"],
-            'date_to' => ['required', "date","after:date_from", new DateAfterOneDayAtLeast($this->date_from)]
+            'date_to' => ['required', "date", "after:date_from", new DateAfterOneDayAtLeast($this->date_from)],
+
+            'note' => ["string", "min:3"],
         ];
     }
     protected function failedValidation(Validator $validator)

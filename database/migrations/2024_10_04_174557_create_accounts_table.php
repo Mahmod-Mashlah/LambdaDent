@@ -20,10 +20,11 @@ return new class extends Migration
             $table->unsignedBigInteger('bill_id')->nullable();
             $table->foreign('bill_id')->references('id')->on('bills')->onDelete('cascade');
 
+            $table->text('note')->nullable();
             $table->string('type');
 
             $table->integer('signed_value');
-            $table->integer('current_account');
+            $table->bigInteger('current_account');
 
             $table->timestamps();
         });

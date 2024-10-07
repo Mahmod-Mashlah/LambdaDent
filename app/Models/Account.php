@@ -15,6 +15,7 @@ class Account extends Model
         'bill_id',
 
         'type',
+        'note',
         'signed_value',
         'current_account',
 

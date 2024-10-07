@@ -77,6 +77,7 @@ class BillController extends Controller
             'bill_id' => $bill->id,
 
             'type' => "سحب من الرصيد (فاتورة)",
+            'note' => $request->note,
             'signed_value' => -$bill->total_cost,
             'current_account' => $previous_client_account_value - $bill->total_cost
 

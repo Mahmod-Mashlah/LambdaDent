@@ -60,7 +60,7 @@ class StateController extends Controller
             $query->where('patient_name', 'like', '%' . $request->input('patient_name') . '%');
         }
         if ($request->has('expected_delivery_date')) {
-            $query->where('expected_delivery_date', $request->input('expected_delivery_date'));
+            $query->whereDate('expected_delivery_date', $request->input('expected_delivery_date'));
         }
         if ($request->has('status')) {
             $query->where('status',  $request->input('status'));
@@ -69,8 +69,9 @@ class StateController extends Controller
             $query->where('confirm_delivery', $request->input('confirm_delivery'));
         }
         if ($request->has('created_date')) {
-            $query->where('created_at',  $request->input('created_date'));
+            $query->whereDate('created_at',  $request->input('created_date'));
         }
+        // dd($query->get());
         $clients_ids_array = $clients_query->pluck("id")->toArray();
         // dd($clients_ids_array);
         $states_from_clients = State::whereIn("client_id", $clients_ids_array)->get();

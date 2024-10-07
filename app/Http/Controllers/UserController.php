@@ -71,6 +71,7 @@ class UserController extends Controller
                 'bill_id' => null,
 
                 'type' => "إنشاء حساب جديد",
+                'note' => "",
                 'signed_value' => 0,
                 'current_account' => 0
 
