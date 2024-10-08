@@ -9,6 +9,7 @@ use App\Http\Controllers\StateController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AuthController /*as ApiAuthController */;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -93,6 +94,12 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
         Route::post('/increase-account', [AccountController::class, 'increase_account']); // admin do this 😎
 
+    });
+
+    // Inventory ( Items , Categories  , Subcategories , ItemHistory
+
+    Route::prefix('inventory')->group(function () {
+        Route::resource('/categories', CategoryController::class);
     });
 
     // Logout

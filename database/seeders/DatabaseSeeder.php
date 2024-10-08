@@ -50,6 +50,7 @@ class DatabaseSeeder extends Seeder
         // way3 :
 
         // $this->call(class: UserSeeder::class);
+        $this->call(class: CategorySeeder::class);
 
         //  way 4 : using Specific & Multiple seeders
 
