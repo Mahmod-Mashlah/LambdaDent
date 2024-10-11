@@ -7,9 +7,10 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class StoreCategoryRequest extends FormRequest
+class StoreSubcategoryRequest extends FormRequest
 {
     use HttpResponses;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -26,7 +27,8 @@ class StoreCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ["required", "string", "min:3", "unique:categories,name"],
+            'name' => ["required", "string", "min:3", "unique:subcategories,name"],
+            'category_id' => ["required", "integer", "exists:categories,id"],
         ];
     }
     protected function failedValidation(Validator $validator)

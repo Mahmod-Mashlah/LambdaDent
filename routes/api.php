@@ -10,6 +10,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AuthController /*as ApiAuthController */;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubcategoryController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -100,6 +101,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::prefix('inventory')->group(function () {
         Route::resource('/categories', CategoryController::class);
+        Route::get('/sub-categories/show-subcategories-by-category-id/{category_id}', [SubcategoryController::class, 'index']); // admin do this 😎
+        Route::get('sub-categories/show-subcategory-details/{subcategory_id}', [SubcategoryController::class, 'show']); // admin and client do this 😎
+        Route::put('sub-categories/update-subcategory/{subcategory_id}', [SubcategoryController::class, 'update']); // admin and client do this 😎
+        Route::delete('sub-categories/delete-subcategory/{subcategory_id}', [SubcategoryController::class, 'destroy']); // admin and client do this 😎
     });
 
     // Logout
