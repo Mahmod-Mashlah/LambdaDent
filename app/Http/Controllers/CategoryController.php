@@ -52,7 +52,7 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         return $this->success([
-            "category" => $category/*->load("bill_cases", "client")*/,
+            "category" => $category->load("subcategories"),
         ], "Category " . $category->name . " details");
     }
 

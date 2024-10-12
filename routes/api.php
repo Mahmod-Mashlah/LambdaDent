@@ -10,7 +10,9 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AuthController /*as ApiAuthController */;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\SubcategoryController;
+use App\Http\Middleware\IsAdmin;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -98,14 +100,34 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     });
 
     // Inventory ( Items , Categories  , Subcategories , ItemHistory
+    Route::middleware([IsAdmin::class])->group(function () {
 
-    Route::prefix('inventory')->group(function () {
-        Route::resource('/categories', CategoryController::class);
-        Route::get('/sub-categories/show-subcategories-by-category-id/{category_id}', [SubcategoryController::class, 'index']); // admin do this 😎
-        Route::get('sub-categories/show-subcategory-details/{subcategory_id}', [SubcategoryController::class, 'show']); // admin and client do this 😎
-        Route::put('sub-categories/update-subcategory/{subcategory_id}', [SubcategoryController::class, 'update']); // admin and client do this 😎
-        Route::delete('sub-categories/delete-subcategory/{subcategory_id}', [SubcategoryController::class, 'destroy']); // admin and client do this 😎
+        Route::prefix('inventory')->group(function () {
+
+            Route::resource('/categories', CategoryController::class);
+
+            Route::prefix('/sub-categories')->group(function () {
+
+                Route::get('/show-subcategories-by-category-id/{category_id}', [SubcategoryController::class, 'index']); // admin do this 😎
+                Route::get('/show-subcategory-details/{subcategory_id}', [SubcategoryController::class, 'show']); // admin and client do this 😎
+                Route::post('/add', [SubcategoryController::class, 'store']); // admin and client do this 😎
+                Route::put('/update-subcategory/{subcategory_id}', [SubcategoryController::class, 'update']); // admin and client do this 😎
+                Route::delete('/delete-subcategory/{subcategory_id}', [SubcategoryController::class, 'destroy']); // admin and client do this 😎
+            });
+
+            Route::prefix('/items')->group(function () {
+
+                Route::get('/show-all-items', [ItemController::class, 'index']); // admin do this 😎
+                Route::get('/show-items-by-category-id/{category_id}', [ItemController::class, 'show_items_by_category_id']); // admin do this 😎
+                Route::get('/show-items-by-subcategory-id/{subcategory_id}', [ItemController::class, 'show_items_by_subcategory_id']); // admin do this 😎
+                Route::get('/show-details/{item_id}', [ItemController::class, 'show']); // admin and client do this 😎
+                Route::post('/add', [ItemController::class, 'store']); // admin and client do this 😎
+                Route::put('/update/{item_id}', [ItemController::class, 'update']); // admin and client do this 😎
+                Route::delete('/delete-item/{item_id}', [ItemController::class, 'destroy']); // admin and client do this 😎
+            });
+        });
     });
+
 
     // Logout
     Route::post('/logout', [AuthController::class, 'logout']);

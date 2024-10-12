@@ -51,6 +51,8 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(class: UserSeeder::class);
         $this->call(class: CategorySeeder::class);
+        $this->call(class: SubcategorySeeder::class);
+        $this->call(class: ItemSeeder::class);
 
         //  way 4 : using Specific & Multiple seeders
 

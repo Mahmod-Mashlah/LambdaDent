@@ -57,7 +57,7 @@ class SubcategoryController extends Controller
     {
         $subcategory = Subcategory::find($subcategory_id);
         return $this->success([
-            "subcategory" => $subcategory //->load("category")
+            "subcategory" => $subcategory->load("items")
         ], "subcategory " . $subcategory->name . " details");
     }
 
