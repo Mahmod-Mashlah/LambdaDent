@@ -100,6 +100,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     });
 
     // Inventory ( Items , Categories  , Subcategories , ItemHistory
+
     Route::middleware([IsAdmin::class])->group(function () {
 
         Route::prefix('inventory')->group(function () {
@@ -121,6 +122,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
                 Route::get('/show-items-by-category-id/{category_id}', [ItemController::class, 'show_items_by_category_id']); // admin do this 😎
                 Route::get('/show-items-by-subcategory-id/{subcategory_id}', [ItemController::class, 'show_items_by_subcategory_id']); // admin do this 😎
                 Route::get('/show-details/{item_id}', [ItemController::class, 'show']); // admin and client do this 😎
+                Route::post('/search', [ItemController::class, 'search']); // admin and client do this 😎
                 Route::post('/add', [ItemController::class, 'store']); // admin and client do this 😎
                 Route::put('/update/{item_id}', [ItemController::class, 'update']); // admin and client do this 😎
                 Route::delete('/delete-item/{item_id}', [ItemController::class, 'destroy']); // admin and client do this 😎

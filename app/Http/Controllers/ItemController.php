@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateItemRequest;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Traits\HttpResponses;
+use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
@@ -55,6 +56,28 @@ class ItemController extends Controller
         ], "Items for  subcategory $subcategory->name");
     }
 
+    public function search(Request $request)
+    {
+        $query = Item::query();
+
+        if (!$request->has('name')) {
+            return $this->error(" please select what you are looking for", "No Search Results Found", 404);
+        }
+
+        $query = $query->where('name', 'like', '%' . $request->name . '%');
+
+        $result = $query->get();
+
+        $items_count = $result->count();
+
+        if ($items_count == 0 /*$intersectedStatesResult->empty()*/) {
+            return $this->error(" please try another search", "No Search Results Found", 404);
+        }
+        return $this->success([
+            "count_of_items_found" => $items_count,
+            "items" => $result,
+        ], 'Searching done', 200);
+    }
     /**
      * Store a newly created resource in storage.
      */

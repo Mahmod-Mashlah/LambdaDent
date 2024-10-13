@@ -3347,7 +3347,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status-code\": 404,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"No Search Results Found\",\n    \"data\": \" please select what are you looking for\"\n}"
+									"body": "{\n    \"status-code\": 404,\n    \"status\": \" Error has occoured ! \",\n    \"message\": \"No Search Results Found\",\n    \"data\": \" please select what you are looking for\"\n}"
 								},
 								{
 									"name": "error : No Search Results Found",

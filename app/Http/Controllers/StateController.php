@@ -46,7 +46,7 @@ class StateController extends Controller
         $clients_query = User::query();
 
         if ((!$request->has('client_name')) && (!$request->has('patient_name')) && (!$request->has('expected_delivery_date')) && (!$request->has('status')) && (!$request->has('confirm_delivery')) && (!$request->has('created_date'))) {
-            return $this->error(" please select what are you looking for", "No Search Results Found", 404);
+            return $this->error(" please select what you are looking for", "No Search Results Found", 404);
         }
         if ($request->has('client_name')) {
 
