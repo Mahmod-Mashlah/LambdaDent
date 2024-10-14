@@ -6,6 +6,7 @@ use App\Models\Item;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
 use App\Models\Category;
+use App\Models\ItemsHistory;
 use App\Models\Subcategory;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
@@ -92,6 +93,16 @@ class ItemController extends Controller
 
         ]);
 
+        $itemHistory = ItemsHistory::create([
+
+            'item_id' => $item->id,
+
+            'updated_type' => "-",
+            'updated_quantity' => $request->quantity,
+            'updated_unit_price' => $request->unit_price,
+
+        ]);
+
         return $this->success([
             // 'images by files' => $images,
             'item' => $item->load('subcategory'),
@@ -115,6 +126,10 @@ class ItemController extends Controller
     public function update(UpdateItemRequest $request, $item_id)
     {
         $item = Item::find($item_id);
+
+        $testController = new ItemsHistoryController();
+        $testController->add_item_to_history($item, $request);
+
         $item->update($request->all());
         $item->save();
 

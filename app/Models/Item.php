@@ -28,4 +28,8 @@ class Item extends Model
     {
         return $this->belongsTo(Subcategory::class);
     }
+    public function itemHistory()
+    {
+        return $this->hasMany(ItemsHistory::class);
+    }
 }

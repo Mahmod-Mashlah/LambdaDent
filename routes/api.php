@@ -11,6 +11,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AuthController /*as ApiAuthController */;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ItemsHistoryController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Middleware\IsAdmin;
 
@@ -127,9 +128,13 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
                 Route::put('/update/{item_id}', [ItemController::class, 'update']); // admin and client do this 😎
                 Route::delete('/delete-item/{item_id}', [ItemController::class, 'destroy']); // admin and client do this 😎
             });
+
+            // ItemHistory :
+            Route::get('/get-item-history-by-id/{item_id}', [ItemsHistoryController::class, 'show_item_history']); // admin do this 😎
+            Route::get('/get-item-quantity-history-by-id/{item_id}', [ItemsHistoryController::class, 'show_item_history_by_quantity']); // admin do this 😎
+            Route::get('/get-item-price-history-by-id/{item_id}', [ItemsHistoryController::class, 'show_item_history_by_unit_price']); // admin do this 😎
         });
     });
-
 
     // Logout
     Route::post('/logout', [AuthController::class, 'logout']);

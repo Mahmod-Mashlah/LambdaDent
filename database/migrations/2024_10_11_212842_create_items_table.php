@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('cascade');
 
             $table->string('name')->nullable();
-            $table->Integer('quantity')->nullable();
+            $table->unsignedInteger('quantity')->nullable();
 
             $table->unsignedInteger('unit_price')->nullable();
 
