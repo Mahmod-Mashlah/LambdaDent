@@ -130,9 +130,16 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             });
 
             // ItemHistory :
-            Route::get('/get-item-history-by-id/{item_id}', [ItemsHistoryController::class, 'show_item_history']); // admin do this 😎
             Route::get('/get-item-quantity-history-by-id/{item_id}', [ItemsHistoryController::class, 'show_item_history_by_quantity']); // admin do this 😎
-            Route::get('/get-item-price-history-by-id/{item_id}', [ItemsHistoryController::class, 'show_item_history_by_unit_price']); // admin do this 😎
+        });
+
+        // Outcome Calculation
+
+        Route::prefix('outcome')->group(function () {
+
+            Route::post('/get-total-outcome', [ItemController::class, 'store']); // admin and client do this 😎
+            Route::post('/get-between-two-months', [ItemController::class, 'store']); // admin and client do this 😎
+            Route::post('/get-for-one-year', [ItemController::class, 'store']); // admin and client do this 😎
         });
     });
 
@@ -144,6 +151,7 @@ Route::post('/array', function (Request $request) {
 
     $string = $request->input('items');
     // $string = "1,2,3";
+
     $array = array_map('intval', explode(",", $string));
 
     return response()->json($array, 200);

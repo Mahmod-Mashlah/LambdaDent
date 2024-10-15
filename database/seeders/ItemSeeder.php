@@ -24,7 +24,7 @@ class ItemSeeder extends Seeder
                     'name' => "item $i for subcategory $id",
                     'subcategory_id' => $id,
                     'quantity' => rand(0, 50),
-                    'unit_price' => rand(0, 50) * 10000
+                    // 'unit_price' => rand(0, 50) * 10000
 
                 ]);
             }

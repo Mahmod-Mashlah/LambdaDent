@@ -89,7 +89,7 @@ class ItemController extends Controller
             'subcategory_id' => $request->subcategory_id,
             'name' => $request->name,
             'quantity' => $request->quantity,
-            'unit_price' => $request->unit_price,
+            // 'unit_price' => $request->unit_price,
 
         ]);
 
@@ -97,9 +97,9 @@ class ItemController extends Controller
 
             'item_id' => $item->id,
 
-            'updated_type' => "-",
+            // 'updated_type' => "-",
             'updated_quantity' => $request->quantity,
-            'updated_unit_price' => $request->unit_price,
+            // 'updated_unit_price' => $request->unit_price,
 
         ]);
 

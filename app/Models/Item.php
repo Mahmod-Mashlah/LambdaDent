@@ -15,7 +15,7 @@ class Item extends Model
 
         'name',
         'quantity',
-        'unit_price',
+        // 'unit_price',
 
         'created_at',
         'upated_at'

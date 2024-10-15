@@ -17,9 +17,9 @@ return new class extends Migration
             $table->unsignedBigInteger('item_id')->nullable();
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
 
-            $table->string("updated_type"); //quantity or unit_price
+            // $table->string("updated_type"); //quantity or unit_price
             $table->unsignedInteger('updated_quantity');
-            $table->unsignedInteger('updated_unit_price');
+            // $table->unsignedInteger('updated_unit_price');
 
             $table->timestamps();
         });

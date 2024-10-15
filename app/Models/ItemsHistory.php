@@ -13,9 +13,9 @@ class ItemsHistory extends Model
 
         'item_id',
 
-        'updated_type',
+        // 'updated_type',
         'updated_quantity',
-        'updated_unit_price',
+        // 'updated_unit_price',
 
         'created_at',
         'upated_at'

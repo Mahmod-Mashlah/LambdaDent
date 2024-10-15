@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->unsignedInteger('quantity')->nullable();
 
-            $table->unsignedInteger('unit_price')->nullable();
+            // $table->unsignedInteger('unit_price')->nullable();
 
             $table->timestamps();
         });

@@ -32,7 +32,7 @@ class StoreItemRequest extends FormRequest
             'name' => ['required', 'string', "min:3", "unique:items,name"],
             'quantity' => ['required', "integer", "min:0"],
 
-            'unit_price' => ["integer", "min:0"]
+            // 'unit_price' => ["integer", "min:0"]
         ];
     }
     protected function failedValidation(Validator $validator)
