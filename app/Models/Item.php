@@ -32,4 +32,8 @@ class Item extends Model
     {
         return $this->hasMany(ItemsHistory::class);
     }
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

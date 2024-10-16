@@ -12,6 +12,7 @@ use App\Http\Controllers\AuthController /*as ApiAuthController */;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ItemsHistoryController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Middleware\IsAdmin;
 
@@ -129,17 +130,19 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
                 Route::delete('/delete-item/{item_id}', [ItemController::class, 'destroy']); // admin and client do this 😎
             });
 
-            // ItemHistory :
+            // Item Quantity History :
             Route::get('/get-item-quantity-history-by-id/{item_id}', [ItemsHistoryController::class, 'show_item_history_by_quantity']); // admin do this 😎
-        });
 
-        // Outcome Calculation
+            // Items Payments :
+            Route::get('/get-all-payments', [PaymentController::class, 'index']); // admin do this 😎
+            Route::get('/get-payments-by-item-id/{item_id}', [PaymentController::class, 'show_item_payments']); // admin do this 😎
+            Route::post('/add-payment', [PaymentController::class, 'store']); // admin and client do this 😎
 
-        Route::prefix('outcome')->group(function () {
+            // Calculate Gains,income,outcome
 
-            Route::post('/get-total-outcome', [ItemController::class, 'store']); // admin and client do this 😎
-            Route::post('/get-between-two-months', [ItemController::class, 'store']); // admin and client do this 😎
-            Route::post('/get-for-one-year', [ItemController::class, 'store']); // admin and client do this 😎
+            Route::get('/calculate-total-gain', [PaymentController::class, 'calculate_income_outcome_gain']); // admin and client do this 😎
+            Route::post('/get-gain-between-two-dates', [PaymentController::class, 'calculateGainBetween2Dates']); // admin and client do this 😎
+
         });
     });
 
