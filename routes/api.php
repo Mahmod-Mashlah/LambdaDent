@@ -12,6 +12,7 @@ use App\Http\Controllers\AuthController /*as ApiAuthController */;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ItemsHistoryController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Middleware\IsAdmin;
@@ -146,6 +147,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         });
     });
 
+
     // Logout
     Route::post('/logout', [AuthController::class, 'logout']);
 });
@@ -159,3 +161,7 @@ Route::post('/array', function (Request $request) {
 
     return response()->json($array, 200);
 });
+
+Route::get('/send-mail-test', [MailController::class, 'sendMail']);
+// Email References :
+// https://youtu.be/wDBNYayGIFw , https://youtu.be/e-_N5Dqr7VI , https://youtu.be/3DnCzqueZ7c
