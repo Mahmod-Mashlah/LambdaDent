@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('type');
             $table->boolean('register_accepted');
             $table->string('email')->unique();
+            $table->boolean('email_is_verified');
+            $table->integer('verification_code')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

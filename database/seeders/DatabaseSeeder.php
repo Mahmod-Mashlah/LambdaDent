@@ -27,6 +27,9 @@ class DatabaseSeeder extends Seeder
             'type' => "admin",
             'register_accepted' => true,
             'email' => "a@gmail.com",
+            'email_is_verified' => true,
+            'verification_code' => 55555,
+            'email_verified_at' => now(),
             'password' => Hash::make('password'),
         ]);
 

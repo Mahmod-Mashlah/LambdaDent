@@ -11,9 +11,10 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     use HttpResponses;
-    public function show_accepted_clients()
+    public function show_accepted_and_emailVerified_clients()
     {
         $registered_clients = User::Where("register_accepted", true)
+            ->where('email_is_verified', true)
             ->where('type', 'client')->get();
 
         if (Auth::user()->type == "admin") {

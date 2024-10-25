@@ -40,12 +40,18 @@ class AuthController extends Controller
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'type' => 'client',
-            'register_accepted' => false,
+            'register_accepted' => 0,
             'phone' => $request->phone,
             'email' => $request->email,
+            'email_is_verified' => 0,
+            'verification_code' => null,
+            'email_verified_at' => null,
             'password' => Hash::make($request->password),
 
         ]);
+
+        $MailController = new MailController();
+        $MailController->send_verification_code($user->email);
 
         return $this->success([
             'token' => $user->createToken('API Token of ' . $user->name)->plainTextToken,

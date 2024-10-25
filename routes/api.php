@@ -2,20 +2,21 @@
 
 use App\Models\Comment;
 use Illuminate\Http\Request;
+use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BillController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\EmailIsVerified;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\AuthController /*as ApiAuthController */;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ItemController;
-use App\Http\Controllers\ItemsHistoryController;
-use App\Http\Controllers\MailController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
-use App\Http\Middleware\IsAdmin;
+use App\Http\Controllers\ItemsHistoryController;
+use App\Http\Controllers\AuthController /*as ApiAuthController */;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -32,124 +33,134 @@ Route::get('/user', function (Request $request) {
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+//E-Mails
+Route::get('/send-mail-test', [MailController::class, 'sendMail']);
+Route::get('/send-verification-code-by-email/{email}', [MailController::class, 'send_verification_code']);
+Route::post('/verify-mail-code-after-register', [MailController::class, 'verify_email_code']);
+// Email References :
+// https://youtu.be/wDBNYayGIFw , https://youtu.be/e-_N5Dqr7VI , https://youtu.be/3DnCzqueZ7c
+
+
 // protected Routes (With Sanctum Auth) ______________________________________________________
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::middleware([EmailIsVerified::class])->group(function () {
 
-    // Years السنوات الدراسية
-    //Route::resource('/years', ApiYearController::class)/*->only(['index', 'show'])*/;
-    //Route::get('/seasons/seasons_by_year_id/{year_id}', [ApiSeasonController::class, 'index']);
+        // Years السنوات الدراسية
+        //Route::resource('/years', ApiYearController::class)/*->only(['index', 'show'])*/;
+        //Route::get('/seasons/seasons_by_year_id/{year_id}', [ApiSeasonController::class, 'index']);
 
-    // Clients Management
-    Route::prefix('clients')->group(function () {
+        // Clients Management
+        Route::prefix('clients')->group(function () {
 
-        Route::get('/show-accepted-clients', [UserController::class, 'show_accepted_clients']);
-        Route::get('/show-clients-requests', [UserController::class, 'show_clients_requests']);
-        Route::get('/show-client-details/{client_id}', [UserController::class, 'show_client_details']);
-        Route::post('/accept-client', [UserController::class, 'accept_client']);
-        Route::post('/decline-client', [UserController::class, 'decline_client']);
-    });
-    // Cases
-
-    Route::prefix('cases')->group(function () {
-
-        Route::get('/show-all-cases', [StateController::class, 'index']);  // admin do this 😎
-        Route::get('/show-client-cases/{client_id}', [StateController::class, 'show_client_cases']);  // admin and client do this 😎
-        Route::post('/add', [StateController::class, 'add']); // admin and client do this 😎
-        Route::get('/show-case-details/{case_id}', [StateController::class, 'show_case_details']);  // admin and client do this 😎
-        Route::post('/request-cancellation', [StateController::class, 'delete_request']); // client do this 😎
-        Route::post('/confirm-delivery', [StateController::class, 'confirm_delivery']); // client do this 😎
-        Route::post('/change-status', [StateController::class, 'change_status']); // admin do this 😎
-
-        Route::get('/download-case-image/{file_id}', [StateController::class, 'downloadFile']); // admin and client do this 😎
-
-        // Search
-
-        Route::post('/search', [StateController::class, 'search']); // admin and client do this 😎
-        Route::post('/search-by-client-name', [StateController::class, 'search_by_client_name']); // admin and client do this 😎
-        Route::post('/search-by-patient-name', [StateController::class, 'search_by_patient_name']); // admin and client do this 😎
-
-        // Comments
-        Route::prefix('comments')->group(function () {
-
-            Route::get('/show-case-comments/{case_id}', [CommentController::class, 'index']); // admin and client do this 😎
-            Route::post('/add-comment', [CommentController::class, 'store']); // admin and client do this 😎
-            Route::get('/delete-comment/{comment_id}', [CommentController::class, 'destroy']); // admin and client do this 😎
+            Route::get('/show-accepted-clients-whose-email-verified', [UserController::class, 'show_accepted_and_emailVerified_clients']);
+            Route::get('/show-clients-requests', [UserController::class, 'show_clients_requests']);
+            Route::get('/show-client-details/{client_id}', [UserController::class, 'show_client_details']);
+            Route::post('/accept-client', [UserController::class, 'accept_client']);
+            Route::post('/decline-client', [UserController::class, 'decline_client']);
         });
-    });
+        // Cases
 
-    // Bills , Bill_Cases
+        Route::prefix('cases')->group(function () {
 
-    Route::prefix('bills')->group(function () {
+            Route::get('/show-all-cases', [StateController::class, 'index']);  // admin do this 😎
+            Route::get('/show-client-cases/{client_id}', [StateController::class, 'show_client_cases']);  // admin and client do this 😎
+            Route::post('/add', [StateController::class, 'add']); // admin and client do this 😎
+            Route::get('/show-case-details/{case_id}', [StateController::class, 'show_case_details']);  // admin and client do this 😎
+            Route::post('/request-cancellation', [StateController::class, 'delete_request']); // client do this 😎
+            Route::post('/confirm-delivery', [StateController::class, 'confirm_delivery']); // client do this 😎
+            Route::post('/change-status', [StateController::class, 'change_status']); // admin do this 😎
 
-        // Route::post('/increase-account', [AccountController::class, 'increase_account']); // admin do this 😎
-        // Route::get('/show-account-history', [CommentController::class, 'show-account-history']); // admin and client do this 😎
+            Route::get('/download-case-image/{file_id}', [StateController::class, 'downloadFile']); // admin and client do this 😎
 
-        Route::get('/show-client-bills/{client_id}', [BillController::class, 'show_client_bills']); // admin and client do this 😎
-        Route::get('/show-bill-details/{bill_id}', [BillController::class, 'show_bill_details']); // admin and client do this 😎
-        Route::post('/add', [BillController::class, 'add_bill']); // admin and client do this 😎
-        Route::get('/client-search-by-date/{date}', [BillController::class, 'client_search_by_date']); // client do this 😎
+            // Search
 
-    });
+            Route::post('/search', [StateController::class, 'search']); // admin and client do this 😎
+            Route::post('/search-by-client-name', [StateController::class, 'search_by_client_name']); // admin and client do this 😎
+            Route::post('/search-by-patient-name', [StateController::class, 'search_by_patient_name']); // admin and client do this 😎
 
-    // Accounts
+            // Comments
+            Route::prefix('comments')->group(function () {
 
-    Route::prefix('accounts')->group(function () {
-
-        Route::get('/show-account-history-by-client-id/{client_id}', [AccountController::class, 'show_account_history']); // admin and client do this 😎
-
-        Route::post('/increase-account', [AccountController::class, 'increase_account']); // admin do this 😎
-
-    });
-
-    // Inventory ( Items , Categories  , Subcategories , ItemHistory
-
-    Route::middleware([IsAdmin::class])->group(function () {
-
-        Route::prefix('inventory')->group(function () {
-
-            Route::resource('/categories', CategoryController::class);
-
-            Route::prefix('/sub-categories')->group(function () {
-
-                Route::get('/show-subcategories-by-category-id/{category_id}', [SubcategoryController::class, 'index']); // admin do this 😎
-                Route::get('/show-subcategory-details/{subcategory_id}', [SubcategoryController::class, 'show']); // admin and client do this 😎
-                Route::post('/add', [SubcategoryController::class, 'store']); // admin and client do this 😎
-                Route::put('/update-subcategory/{subcategory_id}', [SubcategoryController::class, 'update']); // admin and client do this 😎
-                Route::delete('/delete-subcategory/{subcategory_id}', [SubcategoryController::class, 'destroy']); // admin and client do this 😎
+                Route::get('/show-case-comments/{case_id}', [CommentController::class, 'index']); // admin and client do this 😎
+                Route::post('/add-comment', [CommentController::class, 'store']); // admin and client do this 😎
+                Route::get('/delete-comment/{comment_id}', [CommentController::class, 'destroy']); // admin and client do this 😎
             });
+        });
 
-            Route::prefix('/items')->group(function () {
+        // Bills , Bill_Cases
 
-                Route::get('/show-all-items', [ItemController::class, 'index']); // admin do this 😎
-                Route::get('/show-items-by-category-id/{category_id}', [ItemController::class, 'show_items_by_category_id']); // admin do this 😎
-                Route::get('/show-items-by-subcategory-id/{subcategory_id}', [ItemController::class, 'show_items_by_subcategory_id']); // admin do this 😎
-                Route::get('/show-details/{item_id}', [ItemController::class, 'show']); // admin and client do this 😎
-                Route::post('/search', [ItemController::class, 'search']); // admin and client do this 😎
-                Route::post('/add', [ItemController::class, 'store']); // admin and client do this 😎
-                Route::put('/update/{item_id}', [ItemController::class, 'update']); // admin and client do this 😎
-                Route::delete('/delete-item/{item_id}', [ItemController::class, 'destroy']); // admin and client do this 😎
-            });
+        Route::prefix('bills')->group(function () {
 
-            // Item Quantity History :
-            Route::get('/get-item-quantity-history-by-id/{item_id}', [ItemsHistoryController::class, 'show_item_history_by_quantity']); // admin do this 😎
+            // Route::post('/increase-account', [AccountController::class, 'increase_account']); // admin do this 😎
+            // Route::get('/show-account-history', [CommentController::class, 'show-account-history']); // admin and client do this 😎
 
-            // Items Payments :
-            Route::get('/get-all-payments', [PaymentController::class, 'index']); // admin do this 😎
-            Route::get('/get-payments-by-item-id/{item_id}', [PaymentController::class, 'show_item_payments']); // admin do this 😎
-            Route::post('/add-payment', [PaymentController::class, 'store']); // admin and client do this 😎
-
-            // Calculate Gains,income,outcome
-
-            Route::get('/calculate-total-gain', [PaymentController::class, 'calculate_income_outcome_gain']); // admin and client do this 😎
-            Route::post('/get-gain-between-two-dates', [PaymentController::class, 'calculateGainBetween2Dates']); // admin and client do this 😎
+            Route::get('/show-client-bills/{client_id}', [BillController::class, 'show_client_bills']); // admin and client do this 😎
+            Route::get('/show-bill-details/{bill_id}', [BillController::class, 'show_bill_details']); // admin and client do this 😎
+            Route::post('/add', [BillController::class, 'add_bill']); // admin and client do this 😎
+            Route::get('/client-search-by-date/{date}', [BillController::class, 'client_search_by_date']); // client do this 😎
 
         });
+
+        // Accounts
+
+        Route::prefix('accounts')->group(function () {
+
+            Route::get('/show-account-history-by-client-id/{client_id}', [AccountController::class, 'show_account_history']); // admin and client do this 😎
+
+            Route::post('/increase-account', [AccountController::class, 'increase_account']); // admin do this 😎
+
+        });
+
+        // Inventory ( Items , Categories  , Subcategories , ItemHistory
+
+        Route::middleware([IsAdmin::class])->group(function () {
+
+            Route::prefix('inventory')->group(function () {
+
+                Route::resource('/categories', CategoryController::class);
+
+                Route::prefix('/sub-categories')->group(function () {
+
+                    Route::get('/show-subcategories-by-category-id/{category_id}', [SubcategoryController::class, 'index']); // admin do this 😎
+                    Route::get('/show-subcategory-details/{subcategory_id}', [SubcategoryController::class, 'show']); // admin and client do this 😎
+                    Route::post('/add', [SubcategoryController::class, 'store']); // admin and client do this 😎
+                    Route::put('/update-subcategory/{subcategory_id}', [SubcategoryController::class, 'update']); // admin and client do this 😎
+                    Route::delete('/delete-subcategory/{subcategory_id}', [SubcategoryController::class, 'destroy']); // admin and client do this 😎
+                });
+
+                Route::prefix('/items')->group(function () {
+
+                    Route::get('/show-all-items', [ItemController::class, 'index']); // admin do this 😎
+                    Route::get('/show-items-by-category-id/{category_id}', [ItemController::class, 'show_items_by_category_id']); // admin do this 😎
+                    Route::get('/show-items-by-subcategory-id/{subcategory_id}', [ItemController::class, 'show_items_by_subcategory_id']); // admin do this 😎
+                    Route::get('/show-details/{item_id}', [ItemController::class, 'show']); // admin and client do this 😎
+                    Route::post('/search', [ItemController::class, 'search']); // admin and client do this 😎
+                    Route::post('/add', [ItemController::class, 'store']); // admin and client do this 😎
+                    Route::put('/update/{item_id}', [ItemController::class, 'update']); // admin and client do this 😎
+                    Route::delete('/delete-item/{item_id}', [ItemController::class, 'destroy']); // admin and client do this 😎
+                });
+
+                // Item Quantity History :
+                Route::get('/get-item-quantity-history-by-id/{item_id}', [ItemsHistoryController::class, 'show_item_history_by_quantity']); // admin do this 😎
+
+                // Items Payments :
+                Route::get('/get-all-payments', [PaymentController::class, 'index']); // admin do this 😎
+                Route::get('/get-payments-by-item-id/{item_id}', [PaymentController::class, 'show_item_payments']); // admin do this 😎
+                Route::post('/add-payment', [PaymentController::class, 'store']); // admin and client do this 😎
+
+                // Calculate Gains,income,outcome
+
+                Route::get('/calculate-total-gain', [PaymentController::class, 'calculate_income_outcome_gain']); // admin and client do this 😎
+                Route::post('/get-gain-between-two-dates', [PaymentController::class, 'calculateGainBetween2Dates']); // admin and client do this 😎
+
+            });
+        });
+
+
+        // Logout
+        Route::post('/logout', [AuthController::class, 'logout']);
     });
-
-
-    // Logout
-    Route::post('/logout', [AuthController::class, 'logout']);
 });
 
 Route::post('/array', function (Request $request) {
@@ -161,7 +172,3 @@ Route::post('/array', function (Request $request) {
 
     return response()->json($array, 200);
 });
-
-Route::get('/send-mail-test', [MailController::class, 'sendMail']);
-// Email References :
-// https://youtu.be/wDBNYayGIFw , https://youtu.be/e-_N5Dqr7VI , https://youtu.be/3DnCzqueZ7c
