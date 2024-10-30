@@ -54,7 +54,7 @@ class MailController extends Controller
                     'email_verified_at' => now()
                 ]);
                 $user->save();
-                return $this->success(["client" => $user], "Verification code has been verified successfully");
+                return $this->success(["client" => $user], "Your email has been verified successfully, waiting for admin approval");
             }
             return $this->error("Verification code doesn't match. Plaease try again or send verification code again.", "Error", 422);
         } catch (Exception $e) {

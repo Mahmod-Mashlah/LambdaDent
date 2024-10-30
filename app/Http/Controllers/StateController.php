@@ -32,12 +32,14 @@ class StateController extends Controller
     public function show_client_cases($client_id)
     {
         $client = User::find($client_id);
-        $states = State::Where('client_id', $client_id)->orderBy('created_at', 'desc')->with('images')->paginate(20);
+        $states = State::Where('client_id', $client_id)->orderBy('created_at', 'desc')->with('images')->without('client')->paginate(20);
         return $this->success([
             // 'images by files' => $images,
+            'client' => $client,
+            'cases_count' => $states->count(),
             'cases' => $states,
             // 'images by relations' => $state->images,
-        ], "Cases for client : " . $client->first_name . " " . $client->first_name);
+        ], "Cases for client : " . $client->first_name . " " . $client->last_name);
     }
 
     public function search(CaseSearchRequest $request)
@@ -112,9 +114,11 @@ class StateController extends Controller
     }
     public function search_by_patient_name(Request $request)
     {
+        $client_id = Auth::user()->id;
         $query = State::query();
         if ($request->has('patient_name')) {
-            $query->where('patient_name', 'like', '%' . $request->input('patient_name') . '%');
+            $query->where('client_id', $client_id)
+                ->where('patient_name', 'like', '%' . $request->input('patient_name') . '%');
         }
         $result = $query->get();
         $result_count = $result->count();

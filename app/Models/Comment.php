@@ -21,7 +21,7 @@ class Comment extends Model
     ];
 
     protected $with = [
-        'user',
+        'user:id,first_name,last_name,type',
         // 'state',
     ];
     public function user()

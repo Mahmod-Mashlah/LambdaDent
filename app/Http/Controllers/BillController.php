@@ -104,8 +104,10 @@ class BillController extends Controller
     {
         $client = User::find($client_id);
         $bills = Bill::where("client_id", $client_id)
-            ->orderBy('date_from', 'desc')->get();
+            ->orderBy('date_from', 'desc')
+            ->without("client")->get();
         return $this->success([
+            "client" => $client,
             "client_bills" => $bills,
         ], "Bills for client : " . $client->first_name . " " . $client->last_name);
     }

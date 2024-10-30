@@ -60,6 +60,9 @@ class UserController extends Controller
         if ($client->register_accepted == 1) {
             return $this->error("client " . $client->first_name . " " . $client->last_name . " is already accepted", "Error", 422);
         }
+        if ($client->email_is_verified == 0) {
+            return $this->error("client " . $client->first_name . " " . $client->last_name . " hasn't verify his email", "Error", 422);
+        }
         if (Auth::User()->type == "admin") {
 
             $client->register_accepted = 1; // 1 == true
