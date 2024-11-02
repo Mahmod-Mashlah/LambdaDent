@@ -5563,6 +5563,251 @@
 					"name": "Bills",
 					"item": [
 						{
+							"name": "Cases not in bills",
+							"item": [
+								{
+									"name": "show all cases without bills descending with paginating (for All Clients )",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "10|HVHVDNl7r6sZdEWTP0OTptkFH0kurf0Wuz1LBOz632a7c85d",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8000/api/bills/get-all-cases-without-bills-descending?page=1",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"bills",
+												"get-all-cases-without-bills-descending"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "show all cases without bills descending with paginating (for All Clients )",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/vnd.api+json",
+														"type": "text"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/vnd.api+json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "localhost:8000/api/bills/get-all-cases-without-bills-descending?page=1",
+													"host": [
+														"localhost"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"bills",
+														"get-all-cases-without-bills-descending"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "1"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "localhost:8000"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.3.3"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 02 Nov 2024 16:56:35 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"All cases without bills\",\n    \"data\": {\n        \"tatal_cases_count\": 2,\n        \"cases\": {\n            \"current_page\": 1,\n            \"data\": [\n                {\n                    \"id\": 13,\n                    \"client_id\": 3,\n                    \"patient_name\": \"Ahmed Abo ALwaleed\",\n                    \"age\": \"20\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-04\",\n                    \"notes\": \"no need\",\n                    \"status\": 0,\n                    \"confirm_delivery\": 0,\n                    \"cost\": 0,\n                    \"teeth_crown\": \"16,17,0\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14,1\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": \"16,0\",\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13,1\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-11-02T16:44:33.000000Z\",\n                    \"updated_at\": \"2024-11-02T16:44:33.000000Z\",\n                    \"client\": {\n                        \"id\": 3,\n                        \"first_name\": \"Yousof\",\n                        \"last_name\": \"Hamdan\",\n                        \"phone\": \"0987070813\",\n                        \"type\": \"client\",\n                        \"register_accepted\": 1,\n                        \"email\": \"y@gmail.com\",\n                        \"email_is_verified\": 1,\n                        \"email_verified_at\": \"2024-10-27T05:15:56.000000Z\",\n                        \"created_at\": \"2024-10-27T05:14:41.000000Z\",\n                        \"updated_at\": \"2024-10-27T05:32:21.000000Z\"\n                    },\n                    \"images\": [\n                        {\n                            \"id\": 24,\n                            \"case_id\": 13,\n                            \"name\": \"ISE 2023-2024-2.pdf\",\n                            \"is_case_image\": 0,\n                            \"created_at\": \"2024-11-02T16:44:33.000000Z\",\n                            \"updated_at\": \"2024-11-02T16:44:33.000000Z\"\n                        },\n                        {\n                            \"id\": 25,\n                            \"case_id\": 13,\n                            \"name\": \"حل (معدل) فصل أول 23-24 (1).pdf\",\n                            \"is_case_image\": 1,\n                            \"created_at\": \"2024-11-02T16:44:33.000000Z\",\n                            \"updated_at\": \"2024-11-02T16:44:33.000000Z\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 7,\n                    \"client_id\": 2,\n                    \"patient_name\": \"Ahmad Imad\",\n                    \"age\": \"25\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-04\",\n                    \"notes\": \"no need\",\n                    \"status\": 3,\n                    \"confirm_delivery\": 0,\n                    \"cost\": 300000,\n                    \"teeth_crown\": \"16,17,0\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14,1\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": \"16,0\",\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13,1\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-10-01T03:32:55.000000Z\",\n                    \"updated_at\": \"2024-10-30T00:45:09.000000Z\",\n                    \"client\": {\n                        \"id\": 2,\n                        \"first_name\": \"Mahmod\",\n                        \"last_name\": \"Mashlah\",\n                        \"phone\": \"0987070815\",\n                        \"type\": \"client\",\n                        \"register_accepted\": 1,\n                        \"email\": \"mashlahmahmod@gmail.com\",\n                        \"email_is_verified\": 1,\n                        \"email_verified_at\": \"2024-10-27T05:01:04.000000Z\",\n                        \"created_at\": \"2024-10-27T04:59:30.000000Z\",\n                        \"updated_at\": \"2024-10-27T05:04:51.000000Z\"\n                    },\n                    \"images\": [\n                        {\n                            \"id\": 16,\n                            \"case_id\": 7,\n                            \"name\": \"Island On Mountain Lake.jfif\",\n                            \"is_case_image\": 1,\n                            \"created_at\": \"2024-10-28T03:32:55.000000Z\",\n                            \"updated_at\": \"2024-10-28T03:32:55.000000Z\"\n                        }\n                    ]\n                }\n            ],\n            \"first_page_url\": \"http://localhost:8000/api/bills/get-all-cases-without-bills-descending?page=1\",\n            \"from\": 1,\n            \"last_page\": 1,\n            \"last_page_url\": \"http://localhost:8000/api/bills/get-all-cases-without-bills-descending?page=1\",\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://localhost:8000/api/bills/get-all-cases-without-bills-descending?page=1\",\n                    \"label\": \"1\",\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"active\": false\n                }\n            ],\n            \"next_page_url\": null,\n            \"path\": \"http://localhost:8000/api/bills/get-all-cases-without-bills-descending\",\n            \"per_page\": 20,\n            \"prev_page_url\": null,\n            \"to\": 2,\n            \"total\": 2\n        }\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "show all cases without bills (by client_id)descending with paginating",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "2|I0B6Ph050MQQ8qsu2K4Bh5NA7wLuOJfLc46nduZQ8db73e24",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/vnd.api+json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "localhost:8000/api/bills/get-all-cases-without-bills-by-client-id-descending/3?page=1",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"bills",
+												"get-all-cases-without-bills-by-client-id-descending",
+												"3"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "show all cases without bills (by client_id)descending with paginating",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/vnd.api+json",
+														"type": "text"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/vnd.api+json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "localhost:8000/api/bills/get-all-cases-without-bills-by-client-id-descending/3?page=1",
+													"host": [
+														"localhost"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"bills",
+														"get-all-cases-without-bills-by-client-id-descending",
+														"3"
+													],
+													"query": [
+														{
+															"key": "page",
+															"value": "1"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "localhost:8000"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.3.3"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 02 Nov 2024 17:07:52 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"All cases without bills for client : Yousof Hamdan\",\n    \"data\": {\n        \"tatal_cases_count\": 2,\n        \"cases\": {\n            \"current_page\": 1,\n            \"data\": [\n                {\n                    \"id\": 13,\n                    \"client_id\": 3,\n                    \"patient_name\": \"Ahmed Abo ALwaleed\",\n                    \"age\": \"20\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-04\",\n                    \"notes\": \"no need\",\n                    \"status\": 0,\n                    \"confirm_delivery\": 0,\n                    \"cost\": 0,\n                    \"teeth_crown\": \"16,17,0\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14,1\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": \"16,0\",\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13,1\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-11-02T16:44:33.000000Z\",\n                    \"updated_at\": \"2024-11-02T16:44:33.000000Z\",\n                    \"client\": {\n                        \"id\": 3,\n                        \"first_name\": \"Yousof\",\n                        \"last_name\": \"Hamdan\",\n                        \"phone\": \"0987070813\",\n                        \"type\": \"client\",\n                        \"register_accepted\": 1,\n                        \"email\": \"y@gmail.com\",\n                        \"email_is_verified\": 1,\n                        \"email_verified_at\": \"2024-10-27T05:15:56.000000Z\",\n                        \"created_at\": \"2024-10-27T05:14:41.000000Z\",\n                        \"updated_at\": \"2024-10-27T05:32:21.000000Z\"\n                    },\n                    \"images\": [\n                        {\n                            \"id\": 24,\n                            \"case_id\": 13,\n                            \"name\": \"ISE 2023-2024-2.pdf\",\n                            \"is_case_image\": 0,\n                            \"created_at\": \"2024-11-02T16:44:33.000000Z\",\n                            \"updated_at\": \"2024-11-02T16:44:33.000000Z\"\n                        },\n                        {\n                            \"id\": 25,\n                            \"case_id\": 13,\n                            \"name\": \"حل (معدل) فصل أول 23-24 (1).pdf\",\n                            \"is_case_image\": 1,\n                            \"created_at\": \"2024-11-02T16:44:33.000000Z\",\n                            \"updated_at\": \"2024-11-02T16:44:33.000000Z\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 14,\n                    \"client_id\": 3,\n                    \"patient_name\": \"TaHseen Abo AlShabab\",\n                    \"age\": \"20\",\n                    \"gender\": \"male\",\n                    \"need_trial\": 1,\n                    \"repeat\": 0,\n                    \"shade\": \"anything\",\n                    \"expected_delivery_date\": \"2024-10-04\",\n                    \"notes\": \"no need\",\n                    \"status\": 0,\n                    \"confirm_delivery\": 0,\n                    \"cost\": 0,\n                    \"teeth_crown\": \"16,17,0\",\n                    \"teeth_pontic\": null,\n                    \"teeth_implant\": \"12,13,14,1\",\n                    \"teeth_veneer\": null,\n                    \"teeth_inlay\": null,\n                    \"teeth_denture\": null,\n                    \"bridges_crown\": \"16,0\",\n                    \"bridges_pontic\": null,\n                    \"bridges_implant\": \"12,13,1\",\n                    \"bridges_veneer\": null,\n                    \"bridges_inlay\": null,\n                    \"bridges_denture\": null,\n                    \"created_at\": \"2024-11-02T16:44:33.000000Z\",\n                    \"updated_at\": \"2024-11-02T16:44:33.000000Z\",\n                    \"client\": {\n                        \"id\": 3,\n                        \"first_name\": \"Yousof\",\n                        \"last_name\": \"Hamdan\",\n                        \"phone\": \"0987070813\",\n                        \"type\": \"client\",\n                        \"register_accepted\": 1,\n                        \"email\": \"y@gmail.com\",\n                        \"email_is_verified\": 1,\n                        \"email_verified_at\": \"2024-10-27T05:15:56.000000Z\",\n                        \"created_at\": \"2024-10-27T05:14:41.000000Z\",\n                        \"updated_at\": \"2024-10-27T05:32:21.000000Z\"\n                    },\n                    \"images\": []\n                }\n            ],\n            \"first_page_url\": \"http://localhost:8000/api/bills/get-all-cases-without-bills-by-client-id-descending/3?page=1\",\n            \"from\": 1,\n            \"last_page\": 1,\n            \"last_page_url\": \"http://localhost:8000/api/bills/get-all-cases-without-bills-by-client-id-descending/3?page=1\",\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://localhost:8000/api/bills/get-all-cases-without-bills-by-client-id-descending/3?page=1\",\n                    \"label\": \"1\",\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"active\": false\n                }\n            ],\n            \"next_page_url\": null,\n            \"path\": \"http://localhost:8000/api/bills/get-all-cases-without-bills-by-client-id-descending/3\",\n            \"per_page\": 20,\n            \"prev_page_url\": null,\n            \"to\": 2,\n            \"total\": 2\n        }\n    }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
 							"name": "add bill (with hidden-added account record to account history )",
 							"request": {
 								"auth": {

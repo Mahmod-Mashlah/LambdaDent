@@ -102,6 +102,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::post('/add', [BillController::class, 'add_bill'])->middleware(IsAdmin::class); // admin and client do this 😎
             Route::get('/client-search-by-date/{date}', [BillController::class, 'client_search_by_date']); // client do this 😎
 
+            Route::get('/get-all-cases-without-bills-descending', [BillController::class, 'show_all_cases_without_bills'])->middleware(IsAdmin::class); // client do this 😎
+            Route::get('/get-all-cases-without-bills-by-client-id-descending/{client_id}', [BillController::class, 'show_all_cases_without_bills_for_client']); // client do this 😎
+
         });
 
         // Accounts

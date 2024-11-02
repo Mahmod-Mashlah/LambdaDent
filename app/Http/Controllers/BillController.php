@@ -100,6 +100,40 @@ class BillController extends Controller
             "bill_cases" => $cases,
         ], "Bill " . $bill->code_number . " details");
     }
+    public function show_all_cases_without_bills()
+    {
+        $all_cases_with_bills = BillCase::pluck("case_id")->toArray();
+
+        $all_cases_without_bills = State::whereNotIn("id", $all_cases_with_bills);
+        $all_cases_without_bills_count = $all_cases_without_bills->count();
+        $all_cases_without_bills = $all_cases_without_bills
+            ->orderBy('created_at', 'desc')
+            ->paginate(20);
+
+        return $this->success([
+            "tatal_cases_count" => $all_cases_without_bills_count,
+            "cases" => $all_cases_without_bills,
+        ], "All cases without bills");
+    }
+    public function show_all_cases_without_bills_for_client($client_id)
+    {
+        $client = User::find($client_id);
+
+        $all_cases_with_bills = BillCase::pluck("case_id")->toArray();
+
+        $all_cases_without_bills = State::where('client_id', $client_id)
+            ->whereNotIn("id", $all_cases_with_bills);
+
+        $all_cases_without_bills_count = $all_cases_without_bills->count();
+        $all_cases_without_bills = $all_cases_without_bills
+            ->orderBy('created_at', 'desc')
+            ->paginate(20);
+
+        return $this->success([
+            "tatal_cases_count" => $all_cases_without_bills_count,
+            "cases" => $all_cases_without_bills,
+        ], "All cases without bills for client : " . $client->first_name . " " . $client->last_name);
+    }
     public function show_client_bills($client_id)
     {
         $client = User::find($client_id);
