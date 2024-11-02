@@ -3,12 +3,11 @@
 namespace App\Http\Requests;
 
 use App\Traits\HttpResponses;
-use Illuminate\Validation\Rules\Password;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class ForgetPasswordRequest extends FormRequest
+class CheckVereficationCodeRequest extends FormRequest
 {
     use HttpResponses;
     /**
@@ -28,11 +27,8 @@ class ForgetPasswordRequest extends FormRequest
     {
         return [
             'email' => ['required', 'string', 'email', 'max:255', 'exists:users,email'],
-            'new_password' => [
-                'required',
-                'confirmed',
-                Password::defaults() /*be sure that minimum size of the password is 6 not 8 in Illuminate\Validation\Rules\Password  */
-            ],
+            'last_verification_code' => ['required', 'integer', "digits:5"],
+
         ];
     }
 

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\ForgetPasswordRequest;
+use App\Http\Requests\CheckVereficationCodeRequest;
 use App\Http\Requests\RegisterVerificationCodeRequest;
 
 class MailController extends Controller
@@ -61,18 +62,29 @@ class MailController extends Controller
             Log::error("Unable to send email ," . $e->getMessage());
         }
     }
-    public function forget_password(ForgetPasswordRequest $request)
+    public function check_verification_code(CheckVereficationCodeRequest $request)
     {
         try {
             $user = User::where("email", $request->email)->first();
             if ($request->last_verification_code == $user->verification_code) {
-                $user->update([
-                    'password' => Hash::make($request->new_password),
-                ]);
-                $user->save();
-                return $this->success(["client" => $user], "New password has been saved successfully");
+
+                return $this->success([], "Verification Code is valid");
             }
             return $this->error("Verification code doesn't match. Plaease try again or send verification code again.", "Error", 422);
+        } catch (Exception $e) {
+            Log::error("Unable to send email ," . $e->getMessage());
+        }
+    }
+    public function forget_password(ForgetPasswordRequest $request)
+    {
+        try {
+            $user = User::where("email", $request->email)->first();
+
+            $user->update([
+                'password' => Hash::make($request->new_password),
+            ]);
+            $user->save();
+            return $this->success(["client" => $user], "New password has been saved successfully");
         } catch (Exception $e) {
             Log::error("Unable to send email ," . $e->getMessage());
         }
