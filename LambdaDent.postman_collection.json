@@ -9600,7 +9600,7 @@
 											"bearer": [
 												{
 													"key": "token",
-													"value": "1|HvjQEFlLTLAIJ0v2qG2keOjMsJRSFrBd3h6jPBBG63ba5e33",
+													"value": "11|MjCqSM72UZkFfZduxCrC3bpLgDXGpFCvvoWT2tEV13f39339",
 													"type": "string"
 												}
 											]
@@ -9695,7 +9695,7 @@
 												},
 												{
 													"key": "Date",
-													"value": "Tue, 15 Oct 2024 11:22:39 GMT"
+													"value": "Mon, 11 Nov 2024 08:35:59 GMT"
 												},
 												{
 													"key": "Content-Type",
@@ -9707,7 +9707,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Payments History \",\n    \"data\": {\n        \"payments_count\": 4,\n        \"item_payments\": {\n            \"current_page\": 1,\n            \"data\": [\n                {\n                    \"id\": 4,\n                    \"item_id\": 15,\n                    \"quantity\": 20,\n                    \"unit_price\": 225,\n                    \"date\": \"2024-10-20\",\n                    \"created_at\": \"2024-10-15T11:22:30.000000Z\",\n                    \"updated_at\": \"2024-10-15T11:22:30.000000Z\"\n                },\n                {\n                    \"id\": 3,\n                    \"item_id\": 13,\n                    \"quantity\": 40,\n                    \"unit_price\": 105,\n                    \"date\": \"2024-10-20\",\n                    \"created_at\": \"2024-10-15T11:22:04.000000Z\",\n                    \"updated_at\": \"2024-10-15T11:22:04.000000Z\"\n                },\n                {\n                    \"id\": 2,\n                    \"item_id\": 10,\n                    \"quantity\": 35,\n                    \"unit_price\": 100,\n                    \"date\": \"2024-10-20\",\n                    \"created_at\": \"2024-10-15T11:21:45.000000Z\",\n                    \"updated_at\": \"2024-10-15T11:21:45.000000Z\"\n                },\n                {\n                    \"id\": 1,\n                    \"item_id\": 13,\n                    \"quantity\": 30,\n                    \"unit_price\": 100,\n                    \"date\": \"2024-10-20\",\n                    \"created_at\": \"2024-10-15T11:18:31.000000Z\",\n                    \"updated_at\": \"2024-10-15T11:18:31.000000Z\"\n                }\n            ],\n            \"first_page_url\": \"http://localhost:8000/api/inventory/get-all-payments?page=1\",\n            \"from\": 1,\n            \"last_page\": 1,\n            \"last_page_url\": \"http://localhost:8000/api/inventory/get-all-payments?page=1\",\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://localhost:8000/api/inventory/get-all-payments?page=1\",\n                    \"label\": \"1\",\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"active\": false\n                }\n            ],\n            \"next_page_url\": null,\n            \"path\": \"http://localhost:8000/api/inventory/get-all-payments\",\n            \"per_page\": 20,\n            \"prev_page_url\": null,\n            \"to\": 4,\n            \"total\": 4\n        }\n    }\n}"
+											"body": "{\n    \"status-code\": 200,\n    \"status\": \"Request was successful\",\n    \"message\": \"Payments History \",\n    \"data\": {\n        \"payments_count\": 5,\n        \"item_payments\": {\n            \"current_page\": 1,\n            \"data\": [\n                {\n                    \"id\": 5,\n                    \"item_id\": 9,\n                    \"quantity\": 20,\n                    \"unit_price\": 225,\n                    \"date\": \"2024-10-20\",\n                    \"created_at\": \"2024-11-11T08:33:38.000000Z\",\n                    \"updated_at\": \"2024-11-11T08:33:38.000000Z\",\n                    \"item\": {\n                        \"id\": 9,\n                        \"name\": \"item 3 for subcategory 3\",\n                        \"subcategory\": null\n                    }\n                },\n                {\n                    \"id\": 4,\n                    \"item_id\": 11,\n                    \"quantity\": 20,\n                    \"unit_price\": 225,\n                    \"date\": \"2024-10-20\",\n                    \"created_at\": \"2024-11-11T08:33:33.000000Z\",\n                    \"updated_at\": \"2024-11-11T08:33:33.000000Z\",\n                    \"item\": {\n                        \"id\": 11,\n                        \"name\": \"item 2 for subcategory 4\",\n                        \"subcategory\": null\n                    }\n                },\n                {\n                    \"id\": 3,\n                    \"item_id\": 13,\n                    \"quantity\": 20,\n                    \"unit_price\": 225,\n                    \"date\": \"2024-10-20\",\n                    \"created_at\": \"2024-11-11T08:33:27.000000Z\",\n                    \"updated_at\": \"2024-11-11T08:33:27.000000Z\",\n                    \"item\": {\n                        \"id\": 13,\n                        \"name\": \"item 1 for subcategory 5\",\n                        \"subcategory\": null\n                    }\n                },\n                {\n                    \"id\": 2,\n                    \"item_id\": 14,\n                    \"quantity\": 20,\n                    \"unit_price\": 225,\n                    \"date\": \"2024-10-20\",\n                    \"created_at\": \"2024-11-11T08:33:22.000000Z\",\n                    \"updated_at\": \"2024-11-11T08:33:22.000000Z\",\n                    \"item\": {\n                        \"id\": 14,\n                        \"name\": \"item 2 for subcategory 5\",\n                        \"subcategory\": null\n                    }\n                },\n                {\n                    \"id\": 1,\n                    \"item_id\": 15,\n                    \"quantity\": 20,\n                    \"unit_price\": 225,\n                    \"date\": \"2024-10-20\",\n                    \"created_at\": \"2024-11-11T08:33:16.000000Z\",\n                    \"updated_at\": \"2024-11-11T08:33:16.000000Z\",\n                    \"item\": {\n                        \"id\": 15,\n                        \"name\": \"item 3 for subcategory 5\",\n                        \"subcategory\": null\n                    }\n                }\n            ],\n            \"first_page_url\": \"http://localhost:8000/api/inventory/get-all-payments?page=1\",\n            \"from\": 1,\n            \"last_page\": 1,\n            \"last_page_url\": \"http://localhost:8000/api/inventory/get-all-payments?page=1\",\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://localhost:8000/api/inventory/get-all-payments?page=1\",\n                    \"label\": \"1\",\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"active\": false\n                }\n            ],\n            \"next_page_url\": null,\n            \"path\": \"http://localhost:8000/api/inventory/get-all-payments\",\n            \"per_page\": 20,\n            \"prev_page_url\": null,\n            \"to\": 5,\n            \"total\": 5\n        }\n    }\n}"
 										}
 									]
 								},
@@ -9840,7 +9840,7 @@
 											"bearer": [
 												{
 													"key": "token",
-													"value": "1|HvjQEFlLTLAIJ0v2qG2keOjMsJRSFrBd3h6jPBBG63ba5e33",
+													"value": "11|MjCqSM72UZkFfZduxCrC3bpLgDXGpFCvvoWT2tEV13f39339",
 													"type": "string"
 												}
 											]
@@ -9863,7 +9863,7 @@
 											"formdata": [
 												{
 													"key": "item_id",
-													"value": "15",
+													"value": "9",
 													"type": "text"
 												},
 												{
