@@ -16,7 +16,7 @@ class PaymentController extends Controller
     use HttpResponses;
     public function index()
     {
-        $payments = Payment::orderBy('created_at', 'desc')->paginate(20);
+        $payments = Payment::orderBy('created_at', 'desc')->with("item:id,name")->paginate(20);
         $count = $payments->count();
         // or: $items = Item::latest()->get();
 
